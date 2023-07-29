@@ -11,9 +11,10 @@
 \usepackage{eurosym}
 \usepackage{hyperref}
 \usepackage{biblatex}
+\usepackage{attachfile2}
 
 \author{Carlos Pinto Machado
-	<\href{mailto:cpmachado@protonmail.com}{cpmachado@protonmail.com}>}
+	<\href{mailto:2200909@estudante.uab.pt}{2200909@estudante.uab.pt}>}
 
 \title{Exercícios Resolvidos da AULA AbERTA: Introdução à Estatística}
 
@@ -66,10 +67,62 @@
 
 \section*{Introdução}\addcontentsline{toc}{section}{Introdução}
 
-\paragraph{} No decorrer \cite{OliveiraAulaAberta2017}
+\paragraph{} No decorrer da AULA AbERTA - "Introdução à Estatística:
+Estatística Descritiva com R"\cite{AulaAbertaIntroducaoEstatistica2017}, o
+recurso formativo era um guia homónino
+\cite{OliveiraAulaAberta2017}, no qual existem
+exercícios propostos. O presente documento pretende documentar soluções para o
+mesmo com recurso à Bibliografia recomendada do mesmo
+documento\cite{OliveiraEstatisticaDescritiva2011}.
+
+\paragraph{} Em anexo, estão os recursos em zip:
+\attachfile[icon=Paperclip]{recursos.zip}
 
 \clearpage
-\setcounter{section}{3}
+
+\setcounter{section}{2}
+\section{Estatística Descritiva com R}
+\subsection{Organização de dados no R}
+
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{|c|c|c|}
+		\hline
+		$x_i$&$n_i$&$f_i$ \\
+		\hline
+		0&11&0.275\\
+		\hline
+		1&16&0.400\\
+		\hline
+		2& 9&0.225\\
+		\hline
+		3& 2&0.050\\
+		\hline
+		4& 2&0.050\\
+		\hline
+	\end{tabular}
+\end{table}
+\lstinputlisting{./recursos/ex3_1.R}
+
+\subsection{Visualização de dados usando o R}
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.7\textwidth]{./recursos/ex3_2.png}
+\end{figure}
+\lstinputlisting{./recursos/ex3_2.R}
+
+\clearpage
+
+\subsection{Redução de dados: média aritmética e desvio-padrão}
+
+\begin{align*}
+	\overline{x} &= 1.2\\
+	s &= 1.06698713134767
+\end{align*}
+\lstinputlisting{./recursos/ex3_3.R}
+
+\clearpage
 \section{Exercícios}
 \subsection*{Exercícios Propostos}
 
@@ -110,7 +163,7 @@
 		\item \hfill
 			\begin{align*}
 				\overline{x} &= 1260 \\
-				s &= 54.09868
+				s &= 54.5552122756449
 			\end{align*}
 			\lstinputlisting{./recursos/ex4_2c.R}
 		\clearpage
@@ -149,6 +202,7 @@
 		\end{enumerate}
 \end{enumerate}
 
+\clearpage
 \printbibliography[heading=bibintoc,title={Bibliografia}]
 
 \end{document}
