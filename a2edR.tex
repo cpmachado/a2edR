@@ -69,13 +69,21 @@
 
 \paragraph{} No decorrer da AULA AbERTA - "Introdução à Estatística:
 Estatística Descritiva com R"\cite{AulaAbertaIntroducaoEstatistica2017}, o
-recurso formativo era um guia homónino
+recurso formativo era um guia homónimo
 \cite{OliveiraAulaAberta2017}, no qual existem
 exercícios propostos. O presente documento pretende documentar soluções para o
 mesmo com recurso à Bibliografia recomendada do mesmo
 documento\cite{OliveiraEstatisticaDescritiva2011}.
 
-\paragraph{} Em anexo, estão os recursos em zip:
+\paragraph{} Falta completar o exercício 3.3.
+
+\section*{Notas de Implementação}\addcontentsline{toc}{section}{Notas de Implementação}
+
+\paragraph{} Para carregamento dos dados, foram utilizados ficheiros csv que
+criam objectos dataframe. Esta abordagem parece ser mais razoável, dado que
+podemos ter ficheiros com milhares de amostras.
+
+\paragraph{} Em anexo, estão os recursos, código e datasets, em zip:
 \attachfile[icon=Paperclip]{recursos.zip}
 
 \clearpage
@@ -101,6 +109,7 @@ documento\cite{OliveiraEstatisticaDescritiva2011}.
 		4& 2&0.050\\
 		\hline
 	\end{tabular}
+	\caption{Tabela de 3.1}
 \end{table}
 \lstinputlisting{./recursos/ex3_1.R}
 
@@ -109,18 +118,20 @@ documento\cite{OliveiraEstatisticaDescritiva2011}.
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=0.7\textwidth]{./recursos/ex3_2.png}
+	\caption{Gráfico 3.2}
 \end{figure}
+\clearpage
 \lstinputlisting{./recursos/ex3_2.R}
 
-\clearpage
-
-\subsection{Redução de dados: média aritmética e desvio-padrão}
+\subsection{Redução de dados: média aritmética e desvio padrão}
 
 \begin{align*}
 	\overline{x} &= 1.2\\
 	s &= 1.06698713134767
 \end{align*}
 \lstinputlisting{./recursos/ex3_3.R}
+
+\paragraph{POR COMPLETAR\ldots}
 
 \clearpage
 \section{Exercícios}
@@ -158,6 +169,7 @@ documento\cite{OliveiraEstatisticaDescritiva2011}.
 					1500&12&60&0.2000000\\
 					\hline
 				\end{tabular}
+				\caption{Tabela de 4.2 b)}
 			\end{table}
 			\lstinputlisting{./recursos/ex4_2b.R}
 		\item \hfill
@@ -171,6 +183,7 @@ documento\cite{OliveiraEstatisticaDescritiva2011}.
 			\begin{figure}[h!]
 				\centering
 				\includegraphics[width=0.7\textwidth]{./recursos/ex4_2d.png}
+				\caption{Gráfico 4.2 d)}
 			\end{figure}
 			\lstinputlisting{./recursos/ex4_2d.R}
 		\end{enumerate}
@@ -188,6 +201,7 @@ documento\cite{OliveiraEstatisticaDescritiva2011}.
 			\begin{figure}[h!]
 				\centering
 				\includegraphics[width=0.7\textwidth]{./recursos/ex4_4a.png}
+				\caption{Gráfico 4.4 a)}
 			\end{figure}
 			\lstinputlisting{./recursos/ex4_4a.R}
 		\clearpage
@@ -195,6 +209,7 @@ documento\cite{OliveiraEstatisticaDescritiva2011}.
 			\begin{figure}[h!]
 				\centering
 				\includegraphics[width=0.7\textwidth]{./recursos/ex4_4b.png}
+				\caption{Gráfico 4.4 b)}
 			\end{figure}
 			\lstinputlisting{./recursos/ex4_4b.R}
 		\item $\overline{x} = 1.533333$\hfill
@@ -204,5 +219,7 @@ documento\cite{OliveiraEstatisticaDescritiva2011}.
 
 \clearpage
 \printbibliography[heading=bibintoc,title={Bibliografia}]
+\listoftables\addcontentsline{toc}{section}{Lista de Tabelas}
+\listoffigures\addcontentsline{toc}{section}{Lista de Figuras}
 
 \end{document}
