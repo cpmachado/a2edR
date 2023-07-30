@@ -2,15 +2,18 @@
 \usepackage[utf8]{inputenc}
 \usepackage[portuguese]{babel}
 \usepackage[T1]{fontenc}
+\usepackage[margin=2cm]{geometry}
 \usepackage{graphicx}
 \usepackage{amsmath}
 \usepackage{csquotes}
 \usepackage{enumitem}
 \usepackage{listings}
-\usepackage{xcolor}
+\usepackage{listing}
+\usepackage[svgnames]{xcolor}
 \usepackage{eurosym}
-\usepackage{hyperref}
+\usepackage{csvsimple}
 \usepackage{biblatex}
+\usepackage{hyperref}
 \usepackage{attachfile2}
 
 \author{Carlos Pinto Machado
@@ -38,7 +41,7 @@
 	breaklines=true,
 	breakatwhitespace=false,
 	keywordstyle=\color{blue},
-	commentstyle=\color{dkgreen},
+	commentstyle=\color{DarkGreen},
 	escapeinside={\%*}{*)},
 	literate=
 		{á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1
@@ -59,6 +62,8 @@
 		{º}{\textdegree}1
 }
 
+\renewcommand*{\listlistingname}{Lista de Listagens}
+
 \begin{document}
 \maketitle
 \tableofcontents
@@ -69,13 +74,20 @@
 
 \paragraph{} No decorrer da AULA AbERTA - "Introdução à Estatística:
 Estatística Descritiva com R"\cite{AulaAbertaIntroducaoEstatistica2017}, o
-recurso formativo era um guia homónino
+recurso formativo era um guia homónimo
 \cite{OliveiraAulaAberta2017}, no qual existem
 exercícios propostos. O presente documento pretende documentar soluções para o
 mesmo com recurso à Bibliografia recomendada do mesmo
 documento\cite{OliveiraEstatisticaDescritiva2011}.
 
-\paragraph{} Em anexo, estão os recursos em zip:
+\section*{Notas de Implementação}\addcontentsline{toc}{section}{Notas de Implementação}
+
+\paragraph{} Para carregamento dos dados, foram utilizados ficheiros csv que
+criam objectos dataframe. Esta abordagem parece ser mais razoável, dado que
+podemos ter ficheiros com milhares de amostras.
+
+\paragraph{} Em anexo, estão os recursos, código e datasets, em zip:
+
 \attachfile[icon=Paperclip]{recursos.zip}
 
 \clearpage
@@ -101,26 +113,53 @@ documento\cite{OliveiraEstatisticaDescritiva2011}.
 		4& 2&0.050\\
 		\hline
 	\end{tabular}
+	\caption{Exercício 3.1 - Frequências simples e relativas de irmãos}
+	\label{tab:3.1}
 \end{table}
-\lstinputlisting{./recursos/ex3_1.R}
+\lstinputlisting[caption={ex3\_1.R}]{./recursos/ex3_1.R}
 
 \subsection{Visualização de dados usando o R}
 
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width=0.7\textwidth]{./recursos/ex3_2.png}
+	\includegraphics[width=0.4\textwidth]{./recursos/ex3_2.png}
+	\caption{Exercício 3.2 - Gráfico circular de idas ao supermercado}
 \end{figure}
-\lstinputlisting{./recursos/ex3_2.R}
+\lstinputlisting[caption={ex3\_2.R}]{./recursos/ex3_2.R}
 
 \clearpage
-
-\subsection{Redução de dados: média aritmética e desvio-padrão}
+\subsection{Redução de dados: média aritmética e desvio padrão}
 
 \begin{align*}
 	\overline{x} &= 1.2\\
-	s &= 1.06698713134767
+	s &\approx 1.067 \\
+	\frac{s}{\overline{x}} &\approx 0.889 = 88.9 \%
 \end{align*}
-\lstinputlisting{./recursos/ex3_3.R}
+
+\paragraph{} A média permite-nos localizar a tendência central em redor dos
+1.2 irmãos, e o desvio padrão de aproximadamente 1.067, permite-nos verificar
+a dispersão associada. Sendo que o quociente do desvio padrão para com a média
+é relativamente alto, permite-nos concluir que o esbatimento da curva é
+rápido.
+
+\paragraph{} Podemos verificar no gráfico \ref{fig:ex3_3} esse facto. Aparecem
+também duas linhas a vermelho, demonstrando o conjunto de amostras no
+intervalo com centro na média e raio de cumprimento do desvio
+padrão($\overline{x} \pm s$). Data a natureza discreta da amostra fez-se uns
+ajustes, sendo o intervalo dado por:
+$[\lfloor \overline{x} - s \rfloor, \lceil \overline{x} + s \rceil]$.
+
+\vspace{0.5cm}
+
+\lstinputlisting[caption={ex3\_3.R}]{./recursos/ex3_3.R}
+
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.4\textwidth]{./recursos/ex3_3.png}
+	\caption{Exercício da secção 3.3 - Distribuição de irmãos por pessoa}
+	\label{fig:ex3_3}
+\end{figure}
 
 \clearpage
 \section{Exercícios}
@@ -130,14 +169,14 @@ documento\cite{OliveiraEstatisticaDescritiva2011}.
 	\item \addcontentsline{toc}{subsection}{4.1}
 		\begin{enumerate}[label=\alph*)]
 		\item $\overline{x} = 19.41667$\hfill
-			\lstinputlisting{./recursos/ex4_1a.R}
+			\lstinputlisting[caption={ex4\_1a.R}]{./recursos/ex4_1a.R}
 		\item $s = 1.378954$\hfill
-			\lstinputlisting{./recursos/ex4_1b.R}
+			\lstinputlisting[caption={ex4\_1b.R}]{./recursos/ex4_1b.R}
 		\end{enumerate}
 	\item \addcontentsline{toc}{subsection}{4.2}\hfill
 		\begin{enumerate}[label=\alph*)]
 		\item $N = 60$\hfill
-			\lstinputlisting{./recursos/ex4_2a.R}
+			\lstinputlisting[caption={ex4\_2a.R}]{./recursos/ex4_2a.R}
 		\item \hfill
 			\begin{table}[h!]
 				\centering
@@ -158,51 +197,102 @@ documento\cite{OliveiraEstatisticaDescritiva2011}.
 					1500&12&60&0.2000000\\
 					\hline
 				\end{tabular}
+				\caption{Tabela de 4.2 b)}
 			\end{table}
-			\lstinputlisting{./recursos/ex4_2b.R}
+			\lstinputlisting[caption={ex4\_2b.R}]{./recursos/ex4_2b.R}
 		\item \hfill
 			\begin{align*}
 				\overline{x} &= 1260 \\
 				s &= 54.5552122756449
 			\end{align*}
-			\lstinputlisting{./recursos/ex4_2c.R}
-		\clearpage
+			\lstinputlisting[caption={ex4\_2c.R}]{./recursos/ex4_2c.R}
+			\clearpage
 		\item \hfill
 			\begin{figure}[h!]
 				\centering
-				\includegraphics[width=0.7\textwidth]{./recursos/ex4_2d.png}
+				\includegraphics[width=0.4\textwidth]{./recursos/ex4_2d.png}
+				\caption{Exercício 4.2 d) - Distribuição dos salários por nº de colaboradores}
 			\end{figure}
-			\lstinputlisting{./recursos/ex4_2d.R}
+			\lstinputlisting[caption={ex4\_2d.R}]{./recursos/ex4_2d.R}
 		\end{enumerate}
-	\item \addcontentsline{toc}{subsection}{4.3}\hfill
+		\item \addcontentsline{toc}{subsection}{4.3}\hfill
 		\begin{enumerate}[label=\alph*)]
 		\item $\overline{x} = 64.26667$\hfill
-			\lstinputlisting{./recursos/ex4_3a.R}
+			\lstinputlisting[caption={ex4\_3a.R}]{./recursos/ex4_3a.R}
 		\item $s = 9.676678$\hfill
-			\lstinputlisting{./recursos/ex4_3b.R}
+			\lstinputlisting[caption={ex4\_3b.R}]{./recursos/ex4_3b.R}
 		\end{enumerate}
-	\clearpage
+		\clearpage
 	\item \addcontentsline{toc}{subsection}{4.4}\hfill
 		\begin{enumerate}[label=\alph*)]
 		\item \hfill
 			\begin{figure}[h!]
 				\centering
-				\includegraphics[width=0.7\textwidth]{./recursos/ex4_4a.png}
+				\includegraphics[width=0.4\textwidth]{./recursos/ex4_4a.png}
+				\caption{Exercício 4.4 a) - Taxa de Inflação por país}
 			\end{figure}
-			\lstinputlisting{./recursos/ex4_4a.R}
+			\lstinputlisting[caption={ex4\_4a.R}]{./recursos/ex4_4a.R}
 		\clearpage
 		\item \hfill
 			\begin{figure}[h!]
 				\centering
-				\includegraphics[width=0.7\textwidth]{./recursos/ex4_4b.png}
+				\includegraphics[width=0.4\textwidth]{./recursos/ex4_4b.png}
+				\caption{Exercício 4.4 b) - Taxa de inflação por país(Gráfico
+				circular)}
 			\end{figure}
-			\lstinputlisting{./recursos/ex4_4b.R}
+			\lstinputlisting[caption={ex4\_4b.R}]{./recursos/ex4_4b.R}
 		\item $\overline{x} = 1.533333$\hfill
-			\lstinputlisting{./recursos/ex4_4c.R}
+			\lstinputlisting[caption={ex4\_4c.R}]{./recursos/ex4_4c.R}
 		\end{enumerate}
 \end{enumerate}
 
 \clearpage
 \printbibliography[heading=bibintoc,title={Bibliografia}]
+\listoftables\addcontentsline{toc}{section}{Lista de Tabelas}
+\listoffigures\addcontentsline{toc}{section}{Lista de Figuras}
+\listoflistings\addcontentsline{toc}{section}{Lista de Listagens}
+
+\clearpage
+\appendix
+
+\section{Datasets}
+
+\begin{table}[ht!]
+	\begin{minipage}[t]{0.4\textwidth}
+		\centering
+		\csvautotabular{./recursos/dataset/4_1.csv}
+		\caption{Autonomia(h) de smartphones\\ Ficheiro: 4\_1.csv}
+	\end{minipage}\quad
+	\begin{minipage}[t]{0.5\textwidth}
+		\centering
+		\csvautotabular{./recursos/dataset/4_2.csv}
+		\caption{Salários (\euro) dos colaboradores\\ Ficheiro: 4\_2.csv}
+	\end{minipage}
+\end{table}
+\begin{table}[ht!]
+	\begin{minipage}[t]{0.4\textwidth}
+		\centering
+		\csvautotabular{./recursos/dataset/4_3.csv}
+		\caption{Amostra - Peso(Kg) de alunos\\ Ficheiro: 4\_3.csv}
+	\end{minipage}\quad
+	\begin{minipage}[t]{0.4\textwidth}
+		\centering
+		\csvautotabular{./recursos/dataset/4_4.csv}
+		\caption{Taxa de inflação por países \\ Ficheiro: 4\_4.csv}
+	\end{minipage}
+\end{table}
+\begin{table}[t]
+	\begin{minipage}[t]{0.4\textwidth}
+		\centering
+		\csvautotabular{./recursos/dataset/idas.csv}
+		\caption{Idas ao supermercado\\ Ficheiro: idas.csv}
+	\end{minipage}
+	\begin{minipage}[t]{0.4\textwidth}
+		\centering
+		\csvautotabular{./recursos/dataset/irmaos.csv}
+		\caption{Amostra - nº de irmãos\\ Ficheiro: irmaos.csv}
+	\end{minipage}
+\end{table}
+
 
 \end{document}

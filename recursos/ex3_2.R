@@ -1,7 +1,7 @@
 png("ex3_2.png")
 idas <- read.csv("./dataset/idas.csv")$xi
-tabela = table(idas)
+tabela <- table(idas)
 pie(
     tabela,
-    main = "Gráfico circular de idas"
+    main = "Distribuição de pessoas por idas ao supermercado"
 )
