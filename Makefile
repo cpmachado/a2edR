@@ -28,8 +28,10 @@ clean:
 	$(foreach file,${SRC}, ${LATEX_CLEAN} ${file};)
 	rm -f *.atfi *.zip *.bbl *.run.xml *.synctex.gz
 
+lint:
+	Rscript -e 'library(lintr);lint_dir("./recursos/")'
 
 watch:
 	${LATEX_WATCH} ${MAIN}
 
-.PHONY: clean watch dist
+.PHONY: clean watch dist lint
