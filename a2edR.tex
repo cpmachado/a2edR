@@ -2,11 +2,13 @@
 \usepackage[utf8]{inputenc}
 \usepackage[portuguese]{babel}
 \usepackage[T1]{fontenc}
+\usepackage[margin=2cm]{geometry}
 \usepackage{graphicx}
 \usepackage{amsmath}
 \usepackage{csquotes}
 \usepackage{enumitem}
 \usepackage{listings}
+\usepackage{listing}
 \usepackage{xcolor}
 \usepackage{eurosym}
 \usepackage{csvsimple}
@@ -111,27 +113,29 @@ podemos ter ficheiros com milhares de amostras.
 		4& 2&0.050\\
 		\hline
 	\end{tabular}
-	\caption{Tabela de 3.1}
+	\caption{Exercício 3.1 - Frequências simples e relativas de irmãos}
 \end{table}
-\lstinputlisting{./recursos/ex3_1.R}
+\lstinputlisting[caption={ex3\_1.R}]{./recursos/ex3_1.R}
+
+\clearpage
 
 \subsection{Visualização de dados usando o R}
 
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=0.7\textwidth]{./recursos/ex3_2.png}
-	\caption{Gráfico 3.2}
+	\caption{Exercício 3.2 - Gráfico circular de idas ao supermercado}
 \end{figure}
-\clearpage
-\lstinputlisting{./recursos/ex3_2.R}
+\lstinputlisting[caption={ex3\_2.R}]{./recursos/ex3_2.R}
 
+\clearpage
 \subsection{Redução de dados: média aritmética e desvio padrão}
 
 \begin{align*}
 	\overline{x} &= 1.2\\
 	s &= 1.06698713134767
 \end{align*}
-\lstinputlisting{./recursos/ex3_3.R}
+\lstinputlisting[caption={ex3\_3.R}]{./recursos/ex3_3.R}
 
 \paragraph{POR COMPLETAR\ldots}
 
@@ -143,14 +147,15 @@ podemos ter ficheiros com milhares de amostras.
 	\item \addcontentsline{toc}{subsection}{4.1}
 		\begin{enumerate}[label=\alph*)]
 		\item $\overline{x} = 19.41667$\hfill
-			\lstinputlisting{./recursos/ex4_1a.R}
+			\lstinputlisting[caption={ex4\_1a.R}]{./recursos/ex4_1a.R}
 		\item $s = 1.378954$\hfill
-			\lstinputlisting{./recursos/ex4_1b.R}
+			\lstinputlisting[caption={ex4\_1b.R}]{./recursos/ex4_1b.R}
 		\end{enumerate}
+		\clearpage
 	\item \addcontentsline{toc}{subsection}{4.2}\hfill
 		\begin{enumerate}[label=\alph*)]
 		\item $N = 60$\hfill
-			\lstinputlisting{./recursos/ex4_2a.R}
+			\lstinputlisting[caption={ex4\_2a.R}]{./recursos/ex4_2a.R}
 		\item \hfill
 			\begin{table}[h!]
 				\centering
@@ -173,49 +178,51 @@ podemos ter ficheiros com milhares de amostras.
 				\end{tabular}
 				\caption{Tabela de 4.2 b)}
 			\end{table}
-			\lstinputlisting{./recursos/ex4_2b.R}
+			\lstinputlisting[caption={ex4\_2b.R}]{./recursos/ex4_2b.R}
 		\item \hfill
 			\begin{align*}
 				\overline{x} &= 1260 \\
 				s &= 54.5552122756449
 			\end{align*}
-			\lstinputlisting{./recursos/ex4_2c.R}
-		\clearpage
+			\lstinputlisting[caption={ex4\_2c.R}]{./recursos/ex4_2c.R}
+			\clearpage
 		\item \hfill
 			\begin{figure}[h!]
 				\centering
 				\includegraphics[width=0.7\textwidth]{./recursos/ex4_2d.png}
-				\caption{Gráfico 4.2 d)}
+				\caption{Exercício 4.2 d) - Distribuição dos salários por nº de colaboradores}
 			\end{figure}
-			\lstinputlisting{./recursos/ex4_2d.R}
+			\lstinputlisting[caption={ex4\_2d.R}]{./recursos/ex4_2d.R}
 		\end{enumerate}
-	\item \addcontentsline{toc}{subsection}{4.3}\hfill
+		\clearpage
+		\item \addcontentsline{toc}{subsection}{4.3}\hfill
 		\begin{enumerate}[label=\alph*)]
 		\item $\overline{x} = 64.26667$\hfill
-			\lstinputlisting{./recursos/ex4_3a.R}
+			\lstinputlisting[caption={ex4\_3a.R}]{./recursos/ex4_3a.R}
 		\item $s = 9.676678$\hfill
-			\lstinputlisting{./recursos/ex4_3b.R}
+			\lstinputlisting[caption={ex4\_3b.R}]{./recursos/ex4_3b.R}
 		\end{enumerate}
-	\clearpage
+		\clearpage
 	\item \addcontentsline{toc}{subsection}{4.4}\hfill
 		\begin{enumerate}[label=\alph*)]
 		\item \hfill
 			\begin{figure}[h!]
 				\centering
 				\includegraphics[width=0.7\textwidth]{./recursos/ex4_4a.png}
-				\caption{Gráfico 4.4 a)}
+				\caption{Exercício 4.4 a) - Taxa de Inflação por país}
 			\end{figure}
-			\lstinputlisting{./recursos/ex4_4a.R}
+			\lstinputlisting[caption={ex4\_4a.R}]{./recursos/ex4_4a.R}
 		\clearpage
 		\item \hfill
 			\begin{figure}[h!]
 				\centering
 				\includegraphics[width=0.7\textwidth]{./recursos/ex4_4b.png}
-				\caption{Gráfico 4.4 b)}
+				\caption{Exercício 4.4 b) - Taxa de inflação por país(Gráfico
+				circular)}
 			\end{figure}
-			\lstinputlisting{./recursos/ex4_4b.R}
+			\lstinputlisting[caption={ex4\_4b.R}]{./recursos/ex4_4b.R}
 		\item $\overline{x} = 1.533333$\hfill
-			\lstinputlisting{./recursos/ex4_4c.R}
+			\lstinputlisting[caption={ex4\_4c.R}]{./recursos/ex4_4c.R}
 		\end{enumerate}
 \end{enumerate}
 
@@ -223,6 +230,7 @@ podemos ter ficheiros com milhares de amostras.
 \printbibliography[heading=bibintoc,title={Bibliografia}]
 \listoftables\addcontentsline{toc}{section}{Lista de Tabelas}
 \listoffigures\addcontentsline{toc}{section}{Lista de Figuras}
+\listoflistings
 
 \clearpage
 \appendix
@@ -233,36 +241,36 @@ podemos ter ficheiros com milhares de amostras.
 	\begin{minipage}[t]{0.4\textwidth}
 		\centering
 		\csvautotabular{./recursos/dataset/4_1.csv}
-		\caption{4\_1.csv}
+		\caption{Autonomia(h) de smartphones\\ Ficheiro: 4\_1.csv}
 	\end{minipage}\quad
-	\begin{minipage}[t]{0.4\textwidth}
+	\begin{minipage}[t]{0.5\textwidth}
 		\centering
 		\csvautotabular{./recursos/dataset/4_2.csv}
-		\caption{4\_2.csv}
+		\caption{Salários (\euro) dos colaboradores\\ Ficheiro: 4\_2.csv}
 	\end{minipage}
 \end{table}
 \begin{table}[ht!]
 	\begin{minipage}[t]{0.4\textwidth}
 		\centering
 		\csvautotabular{./recursos/dataset/4_3.csv}
-		\caption{4\_3.csv}
+		\caption{Amostra - Peso(Kg) de alunos\\ Ficheiro: 4\_3.csv}
 	\end{minipage}\quad
 	\begin{minipage}[t]{0.4\textwidth}
 		\centering
 		\csvautotabular{./recursos/dataset/4_4.csv}
-		\caption{4\_4.csv}
+		\caption{Taxa de inflação por países \\ Ficheiro: 4\_4.csv}
 	\end{minipage}
 \end{table}
 \begin{table}[t]
 	\begin{minipage}[t]{0.4\textwidth}
 		\centering
 		\csvautotabular{./recursos/dataset/idas.csv}
-		\caption{idas.csv}
+		\caption{Idas ao supermercado\\ Ficheiro: idas.csv}
 	\end{minipage}
 	\begin{minipage}[t]{0.4\textwidth}
 		\centering
 		\csvautotabular{./recursos/dataset/irmaos.csv}
-		\caption{irmaos.csv}
+		\caption{Amostra - nº de irmãos\\ Ficheiro: irmaos.csv}
 	\end{minipage}
 \end{table}
 
