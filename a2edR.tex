@@ -9,6 +9,8 @@
 \usepackage{listings}
 \usepackage{xcolor}
 \usepackage{eurosym}
+\usepackage{csvsimple}
+\usepackage{verbatim}
 \usepackage{hyperref}
 \usepackage{biblatex}
 \usepackage{attachfile2}
@@ -221,5 +223,48 @@ podemos ter ficheiros com milhares de amostras.
 \printbibliography[heading=bibintoc,title={Bibliografia}]
 \listoftables\addcontentsline{toc}{section}{Lista de Tabelas}
 \listoffigures\addcontentsline{toc}{section}{Lista de Figuras}
+
+\clearpage
+\appendix
+
+\section{Datasets}
+
+\begin{table}[ht!]
+	\begin{minipage}[t]{0.4\textwidth}
+		\centering
+		\csvautotabular{./recursos/dataset/4_1.csv}
+		\caption{4\_1.csv}
+	\end{minipage}\quad
+	\begin{minipage}[t]{0.4\textwidth}
+		\centering
+		\csvautotabular{./recursos/dataset/4_2.csv}
+		\caption{4\_2.csv}
+	\end{minipage}
+\end{table}
+\begin{table}[ht!]
+	\begin{minipage}[t]{0.4\textwidth}
+		\centering
+		\csvautotabular{./recursos/dataset/4_3.csv}
+		\caption{4\_3.csv}
+	\end{minipage}\quad
+	\begin{minipage}[t]{0.4\textwidth}
+		\centering
+		\csvautotabular{./recursos/dataset/4_4.csv}
+		\caption{4\_4.csv}
+	\end{minipage}
+\end{table}
+\begin{table}[t]
+	\begin{minipage}[t]{0.4\textwidth}
+		\centering
+		\csvautotabular{./recursos/dataset/idas.csv}
+		\caption{idas.csv}
+	\end{minipage}
+	\begin{minipage}[t]{0.4\textwidth}
+		\centering
+		\csvautotabular{./recursos/dataset/irmaos.csv}
+		\caption{irmaos.csv}
+	\end{minipage}
+\end{table}
+
 
 \end{document}
