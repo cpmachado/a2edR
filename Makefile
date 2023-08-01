@@ -26,7 +26,7 @@ dist: clean
 
 clean:
 	$(foreach file,${SRC}, ${LATEX_CLEAN} ${file};)
-	rm -f *.atfi *.zip *.bbl *.run.xml *.synctex.gz
+	rm -f *.atfi *.zip *.bbl *.run.xml *.synctex.gz *.lol
 
 lint:
 	Rscript -e 'library(lintr);lint_dir("./recursos/")'
