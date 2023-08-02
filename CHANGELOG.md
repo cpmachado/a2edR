@@ -9,9 +9,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 - Zip de distribuição com a versão
-- Correcção no README
-- Correcção no exercício 3.3, sobre intervalo a volta da média
 - Mudar layout de article para report
+
+### Fixed
+- Lista no README
+- Exercício 3.3, sobre intervalo em torno da média
+- CHANGELOG secções Fixed
 
 ## [1.0.0]
 
@@ -25,12 +28,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [0.1.0]
 
 ### Added
-
 - Script de lint no Makefile com recurso ao pacote lintr
-- Correcções na bibliografia
 - Normalizar legendas de elementos flutuantes
-- Correcção no exercício 3.2
 - Adicionar CHANGELOG.md
+
+### Fixed
+- Bibliografia
+- Exercício 3.2
 
 
 ## [0.0.0]
