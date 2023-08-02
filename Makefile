@@ -1,5 +1,5 @@
 MAIN = a2edR.tex
-RES = $(find recursos)
+RES = $(wildcard ./recursos/**/*)
 OUT=${MAIN:.tex=.pdf}
 SRC=$(wildcard *.tex)
 LATEX=latexmk -pdf
@@ -14,7 +14,7 @@ PKG = \
 	recursos\
 	a2edR.pdf
 
-${OUT}: ${SRC} recursos.zip
+${OUT}: ${SRC} ${RES} recursos.zip
 	${LATEX} ${MAIN}
 
 recursos.zip: ${RES}
