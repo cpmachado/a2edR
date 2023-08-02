@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 - Correcção no README
+- Correcção no exercício 3.3, sobre intervalo a volta da média
 
 ## [1.0.0]
 
