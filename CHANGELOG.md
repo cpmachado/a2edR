@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.0]
+
 ### Added
 - Exercício 3.3
 
@@ -32,6 +34,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Exercícios propostos do guia da Aula Aberta, salvo resposta completa no
   exercício da secção 3.3
 
-[unreleased]: https://github.com/cpmachado/a2edR/compare/v0.1.0...HEAD
-[0.1.0]: https://github.com/cpmachado/a2edR/releases/tag/v0.0.0
+[unreleased]: https://github.com/cpmachado/a2edR/compare/v1.0.0...HEAD
+[1.0.0]: https://github.com/cpmachado/a2edR/releases/tag/v1.0.0
+[0.1.0]: https://github.com/cpmachado/a2edR/releases/tag/v0.1.0
 [0.0.0]: https://github.com/cpmachado/a2edR/releases/tag/v0.0.0
