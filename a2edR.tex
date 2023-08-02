@@ -14,14 +14,13 @@
 \usepackage{csvsimple}
 \usepackage{biblatex}
 \usepackage{hyperref}
-\usepackage{attachfile2}
 
 \author{Carlos Pinto Machado
 	<\href{mailto:2200909@estudante.uab.pt}{2200909@estudante.uab.pt}>}
 
 \title{Exercícios Resolvidos da AULA AbERTA: Introdução à Estatística}
 
-\addbibresource{./bibliografia.bib}
+\addbibresource{bibliografia.bib}
 \makeindex
 \lstset{
 	language=R,
@@ -82,12 +81,24 @@ documento\cite{OliveiraEstatisticaDescritiva2011}.
 
 \section*{Notas de Implementação}\addcontentsline{toc}{section}{Notas de Implementação}
 
-\paragraph{} Para carregamento dos dados, foram utilizados ficheiros csv que
-criam objectos dataframe. Esta abordagem parece ser mais razoável, dado que
+\paragraph{} Com recurso ao manual do R\cite{RManual}, existe uma tendência
+aparente, que é a manipulação de data frames. Parece ser o nexo, sob qual o
+ecosistema floresce. Por tal foi o foco nas soluções demonstradas, recorrendo
+regularmente aos recursos disponíveis no site.
+
+\paragraph{} Para carregamento dos dados e gestão dos dados, foram utilizados
+ficheiros csv. Esta abordagem parece ser mais razoável, dado que
 podemos ter ficheiros com milhares de amostras.
 
-\paragraph{} Em anexo, estão os recursos, código e datasets, em zip:
-\attachfile[icon=Paperclip]{recursos.zip}
+
+\section*{Recursos associados}\addcontentsline{toc}{section}{Recursos associados}
+
+\paragraph{} Na página do repositório\cite{a2edRRepo}
+estão os recursos, código e datasets, em zip:
+
+\begin{center}
+	\url{https://github.com/cpmachado/a2edR/releases/latest}.
+\end{center}
 
 
 \part{Introdução à Estatística: Estatística Descritiva com R}
@@ -96,27 +107,20 @@ podemos ter ficheiros com milhares de amostras.
 \chapter{Estatística Descritiva com R}
 \section{Organização de dados no R}
 
+\lstinputlisting[caption={ex3\_1.R}]{codigo/ieedr/ex3_1.R}
+
 \begin{table}[h!]
 	\centering
-	\begin{tabular}{|c|c|c|}
-		\hline
-		$x_i$&$n_i$&$f_i$ \\
-		\hline
-		0&11&0.275\\
-		\hline
-		1&16&0.400\\
-		\hline
-		2& 9&0.225\\
-		\hline
-		3& 2&0.050\\
-		\hline
-		4& 2&0.050\\
-		\hline
-	\end{tabular}
-	\caption{Exercício 3.1 - Frequências simples e relativas de irmãos}
+	\csvreader[
+		tabular = |c|c|r|l|,
+		late after line = \\\hline,
+		table head = \hline $i$ & $x_i$ & $n_i$ & $f_i$ \\ \hline
+	]{tabela/ieedr/ex3_1.csv}{xi=\xi, ni=\ni, fi=\sfi}{
+		\thecsvrow & \xi & \ni & \sfi
+	}
+	\caption{Frequências simples e relativas de irmãos}
 	\label{tab:3.1}
 \end{table}
-\lstinputlisting[caption={ex3\_1.R}]{./recursos/ex3_1.R}
 
 \clearpage
 
@@ -124,10 +128,10 @@ podemos ter ficheiros com milhares de amostras.
 
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width=0.4\textwidth]{./recursos/ex3_2.png}
-	\caption{Exercício 3.2 - Gráfico circular de idas ao supermercado}
+	\includegraphics[width=0.7\textwidth]{imagem/ieedr/ex3_2.png}
+	\caption{Gráfico circular de idas ao supermercado}
 \end{figure}
-\lstinputlisting[caption={ex3\_2.R}]{./recursos/ex3_2.R}
+\lstinputlisting[caption={ex3\_2.R}]{codigo/ieedr/ex3_2.R}
 
 \clearpage
 \section{Redução de dados: média aritmética e desvio padrão}
@@ -149,151 +153,103 @@ também duas linhas a vermelho, demonstrando o conjunto de amostras no
 intervalo com centro na média e raio de cumprimento do desvio
 padrão($\overline{x} \pm s$). Data a natureza discreta da amostra fez-se uns
 ajustes, sendo o intervalo dado por:
-$[\lceil \overline{x} - s \rceil, \lfloor \overline{x} + s \rfloor]$.
 
-\vspace{0.5cm}
-
-\lstinputlisting[caption={ex3\_3.R}]{./recursos/ex3_3.R}
+\begin{align*}
+	\lceil \overline{x} - s \rceil &= \lceil 1.2 - 1.067 \rceil =  1 \\
+	\lfloor \overline{x} + s \rfloor &= \lfloor 1.2 + 1.067 \rfloor = 2 \\
+	I &= [\lceil \overline{x} - s \rceil, \lfloor \overline{x} + s \rfloor] =
+	[1, 2]
+\end{align*}
 
 
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width=0.4\textwidth]{./recursos/ex3_3.png}
-	\caption{Exercício da secção 3.3 - Distribuição de irmãos por pessoa}
+	\includegraphics[width=0.7\textwidth]{imagem/ieedr/ex3_3.png}
+	\caption{Distribuição de irmãos por pessoa}
 	\label{fig:ex3_3}
 \end{figure}
 
 \clearpage
+
+\lstinputlisting[caption={ex3\_3.R}]{codigo/ieedr/ex3_3.R}
+
 \chapter{Exercícios}
 \section*{Exercícios Propostos}
 
 \begin{enumerate}[label=\arabic{chapter}.\arabic*]
-	\item \addcontentsline{toc}{section}{4.1}
+	\item \addcontentsline{toc}{section}{4.1}\hfill \\
+		\lstinputlisting[caption={ex4\_1.R}]{codigo/ieedr/ex4_1.R}
 		\begin{enumerate}[label=\alph*)]
 		\item $\overline{x} = 19.41667$\hfill
-			\lstinputlisting[caption={ex4\_1a.R}]{./recursos/ex4_1a.R}
 		\item $s = 1.378954$\hfill
-			\lstinputlisting[caption={ex4\_1b.R}]{./recursos/ex4_1b.R}
 		\end{enumerate}
-	\item \addcontentsline{toc}{section}{4.2}\hfill
+	\clearpage
+	\item \addcontentsline{toc}{section}{4.2}\hfill\\
+		\lstinputlisting[caption={ex4\_2.R}]{codigo/ieedr/ex4_2.R}
 		\begin{enumerate}[label=\alph*)]
-		\item $N = 60$\hfill
-			\lstinputlisting[caption={ex4\_2a.R}]{./recursos/ex4_2a.R}
-		\item \hfill
+		\item $N = 60$
+		\item \hfill\\
 			\begin{table}[h!]
 				\centering
-				\begin{tabular}{|c|c|c|c|}
-					\hline
-					$x_i$&$n_i$&$N_i$&$f_i$ \\
-					\hline
-					1000&10&10&0.1666667\\
-					\hline
-					1100& 8&18&0.1333333\\
-					\hline
-					1200&12&30&0.2000000\\
-					\hline
-					1300& 8&38&0.1333333\\
-					\hline
-					1400&10&48&0.1666667\\
-					\hline
-					1500&12&60&0.2000000\\
-					\hline
-				\end{tabular}
-				\caption{Tabela de 4.2 b)}
+				\csvreader[
+					tabular = |c|c|r|r|l|l|,
+					late after line = \\\hline,
+					table head = \hline $i$ & $x_i$ & $n_i$ & $N_i$
+											& $f_i$ & $F_i$ \\ \hline
+				]{tabela/ieedr/ex4_2b.csv}
+				{xi=\xi, ni=\ni, Ni=\Ni, fi=\sfi, Fi=\Fi}{
+					\thecsvrow & \xi & \ni & \Ni & \sfi & \Fi
+				}
+				\caption{Tabela de frequências da distribuição de salários}
 			\end{table}
-			\lstinputlisting[caption={ex4\_2b.R}]{./recursos/ex4_2b.R}
-			\clearpage
-		\item \hfill
+		\item \hfill \\
 			\begin{align*}
 				\overline{x} &= 1260 \\
 				s &= 54.5552122756449
 			\end{align*}
-			\lstinputlisting[caption={ex4\_2c.R}]{./recursos/ex4_2c.R}
-		\item \hfill
+	\clearpage
+		\item \hfill \\
 			\begin{figure}[h!]
 				\centering
-				\includegraphics[width=0.4\textwidth]{./recursos/ex4_2d.png}
-				\caption{Exercício 4.2 d) - Distribuição dos salários por nº de colaboradores}
+				\includegraphics[width=0.6\textwidth]{imagem/ieedr/ex4_2d.png}
+				\caption{Distribuição dos salários por nº de colaboradores}
 			\end{figure}
-			\lstinputlisting[caption={ex4\_2d.R}]{./recursos/ex4_2d.R}
 		\end{enumerate}
-		\item \addcontentsline{toc}{section}{4.3}\hfill
+	\clearpage
+	\item \addcontentsline{toc}{section}{4.3}\hfill \\
+		\lstinputlisting[caption={ex4\_3.R}]{codigo/ieedr/ex4_3.R}
 		\begin{enumerate}[label=\alph*)]
-		\item $\overline{x} = 64.26667$\hfill
-			\lstinputlisting[caption={ex4\_3a.R}]{./recursos/ex4_3a.R}
-		\item $s = 9.676678$\hfill
-			\lstinputlisting[caption={ex4\_3b.R}]{./recursos/ex4_3b.R}
+		\item $\overline{x} = 64.26667$
+		\item $s = 9.676678$
 		\end{enumerate}
-		\clearpage
-	\item \addcontentsline{toc}{section}{4.4}\hfill
+	\clearpage
+	\item \addcontentsline{toc}{section}{4.4}\hfill\\
+		\lstinputlisting[caption={ex4\_4.R}]{codigo/ieedr/ex4_4.R}
 		\begin{enumerate}[label=\alph*)]
 		\item \hfill
 			\begin{figure}[h!]
 				\centering
-				\includegraphics[width=0.4\textwidth]{./recursos/ex4_4a.png}
-				\caption{Exercício 4.4 a) - Taxa de Inflação por país}
+				\includegraphics[width=0.5\textwidth]{imagem/ieedr/ex4_4a.png}
+				\caption{Taxa de Inflação por país}
 			\end{figure}
-			\lstinputlisting[caption={ex4\_4a.R}]{./recursos/ex4_4a.R}
-		\clearpage
+	\clearpage
 		\item \hfill
 			\begin{figure}[h!]
 				\centering
-				\includegraphics[width=0.4\textwidth]{./recursos/ex4_4b.png}
-				\caption{Exercício 4.4 b) - Taxa de inflação por país(Gráfico
+				\includegraphics[width=0.5\textwidth]{imagem/ieedr/ex4_4b.png}
+				\caption{Taxa de inflação por país(Gráfico
 				circular)}
 			\end{figure}
-			\lstinputlisting[caption={ex4\_4b.R}]{./recursos/ex4_4b.R}
-		\item $\overline{x} = 1.533333$\hfill
-			\lstinputlisting[caption={ex4\_4c.R}]{./recursos/ex4_4c.R}
+		\item $\overline{x} = 1.533333$
 		\end{enumerate}
 \end{enumerate}
 
 \clearpage
+\begingroup
+\let\clearpage\relax
 \printbibliography[heading=bibintoc,title={Bibliografia}]
 \listoftables\addcontentsline{toc}{chapter}{Lista de Tabelas}
 \listoffigures\addcontentsline{toc}{chapter}{Lista de Figuras}
-\listoflistings\addcontentsline{toc}{chapter}{Lista de Listagens}
-
-\appendix
-
-\chapter{Datasets}
-
-\begin{table}[ht!]
-	\begin{minipage}[t]{0.4\textwidth}
-		\centering
-		\csvautotabular{./recursos/dataset/4_1.csv}
-		\caption{Autonomia(h) de smartphones\\ Ficheiro: 4\_1.csv}
-	\end{minipage}\quad
-	\begin{minipage}[t]{0.5\textwidth}
-		\centering
-		\csvautotabular{./recursos/dataset/4_2.csv}
-		\caption{Salários (\euro) dos colaboradores\\ Ficheiro: 4\_2.csv}
-	\end{minipage}
-\end{table}
-\begin{table}[ht!]
-	\begin{minipage}[t]{0.4\textwidth}
-		\centering
-		\csvautotabular{./recursos/dataset/4_3.csv}
-		\caption{Amostra - Peso(Kg) de alunos\\ Ficheiro: 4\_3.csv}
-	\end{minipage}\quad
-	\begin{minipage}[t]{0.4\textwidth}
-		\centering
-		\csvautotabular{./recursos/dataset/4_4.csv}
-		\caption{Taxa de inflação por países \\ Ficheiro: 4\_4.csv}
-	\end{minipage}
-\end{table}
-\begin{table}[t]
-	\begin{minipage}[t]{0.4\textwidth}
-		\centering
-		\csvautotabular{./recursos/dataset/idas.csv}
-		\caption{Idas ao supermercado\\ Ficheiro: idas.csv}
-	\end{minipage}
-	\begin{minipage}[t]{0.4\textwidth}
-		\centering
-		\csvautotabular{./recursos/dataset/irmaos.csv}
-		\caption{Amostra - nº de irmãos\\ Ficheiro: irmaos.csv}
-	\end{minipage}
-\end{table}
-
+\endgroup
 
 \end{document}

@@ -7,6 +7,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+- editorconfig para o repositório
+- Referência ao repositório, para download dos recursos
+- Formatação usando styler e script no Makefile
+
+### Changed
+- Alteração no script de lint no Makefile
+- Expandir referência da AULA AbERTA, para o mencionar como subtítulo
+- Agrupar bibliografia, lista de tabelas e figuras
+- Redesenho de Makefile
+- Reorganização do repositório
+
+### Removed
+- Remover recursos anexados no pdf
+- Remover datasets de appendix
+- Remover lista de listagens de código
+
+
+## [1.1.0]
 ### Changed
 - Zip de distribuição com a versão
 - Mudar layout de article para report
@@ -44,7 +63,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Exercícios propostos do guia da Aula Aberta, salvo resposta completa no
   exercício da secção 3.3
 
-[unreleased]: https://github.com/cpmachado/a2edR/compare/v1.0.0...HEAD
+[unreleased]: https://github.com/cpmachado/a2edR/compare/v1.1.0...HEAD
+[1.1.0]: https://github.com/cpmachado/a2edR/releases/tag/v1.1.0
 [1.0.0]: https://github.com/cpmachado/a2edR/releases/tag/v1.0.0
 [0.1.0]: https://github.com/cpmachado/a2edR/releases/tag/v0.1.0
 [0.0.0]: https://github.com/cpmachado/a2edR/releases/tag/v0.0.0
