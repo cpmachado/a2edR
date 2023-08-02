@@ -7,14 +7,15 @@ LATEX=latexmk -pdf
 LATEX_CLEAN=latexmk -c
 LATEX_WATCH=latexmk -pdf -pvc
 PKG = \
-	a2edR.tex\
-	bibliografia.bib\
+	CHANGELOG.md\
 	LICENSE\
 	Makefile\
 	README.md\
-	recursos\
+	VERSION\
 	a2edR.pdf\
-	VERSION
+	a2edR.tex\
+	bibliografia.bib\
+	recursos
 
 ${OUT}: ${SRC} ${RES} recursos.zip
 	${LATEX} ${MAIN}
