@@ -1,4 +1,4 @@
-\documentclass[11pt,a4paper]{article}
+\documentclass[11pt,a4paper]{report}
 \usepackage[utf8]{inputenc}
 \usepackage[portuguese]{babel}
 \usepackage[T1]{fontenc}
@@ -70,7 +70,7 @@
 
 \clearpage
 
-\section*{Introdução}\addcontentsline{toc}{section}{Introdução}
+\chapter*{Introdução}\addcontentsline{toc}{chapter}{Introdução}
 
 \paragraph{} No decorrer da AULA AbERTA - "Introdução à Estatística:
 Estatística Descritiva com R"\cite{AulaAbertaIntroducaoEstatistica2017}, o
@@ -87,14 +87,13 @@ criam objectos dataframe. Esta abordagem parece ser mais razoável, dado que
 podemos ter ficheiros com milhares de amostras.
 
 \paragraph{} Em anexo, estão os recursos, código e datasets, em zip:
-
 \attachfile[icon=Paperclip]{recursos.zip}
 
 \clearpage
 
-\setcounter{section}{2}
-\section{Estatística Descritiva com R}
-\subsection{Organização de dados no R}
+\setcounter{chapter}{2}
+\chapter{Estatística Descritiva com R}
+\section{Organização de dados no R}
 
 \begin{table}[h!]
 	\centering
@@ -118,7 +117,9 @@ podemos ter ficheiros com milhares de amostras.
 \end{table}
 \lstinputlisting[caption={ex3\_1.R}]{./recursos/ex3_1.R}
 
-\subsection{Visualização de dados usando o R}
+\clearpage
+
+\section{Visualização de dados usando o R}
 
 \begin{figure}[h!]
 	\centering
@@ -128,7 +129,7 @@ podemos ter ficheiros com milhares de amostras.
 \lstinputlisting[caption={ex3\_2.R}]{./recursos/ex3_2.R}
 
 \clearpage
-\subsection{Redução de dados: média aritmética e desvio padrão}
+\section{Redução de dados: média aritmética e desvio padrão}
 
 \begin{align*}
 	\overline{x} &= 1.2\\
@@ -162,18 +163,18 @@ $[\lceil \overline{x} - s \rceil, \lfloor \overline{x} + s \rfloor]$.
 \end{figure}
 
 \clearpage
-\section{Exercícios}
-\subsection*{Exercícios Propostos}
+\chapter{Exercícios}
+\section*{Exercícios Propostos}
 
-\begin{enumerate}[label=\arabic{section}.\arabic*]
-	\item \addcontentsline{toc}{subsection}{4.1}
+\begin{enumerate}[label=\arabic{chapter}.\arabic*]
+	\item \addcontentsline{toc}{section}{4.1}
 		\begin{enumerate}[label=\alph*)]
 		\item $\overline{x} = 19.41667$\hfill
 			\lstinputlisting[caption={ex4\_1a.R}]{./recursos/ex4_1a.R}
 		\item $s = 1.378954$\hfill
 			\lstinputlisting[caption={ex4\_1b.R}]{./recursos/ex4_1b.R}
 		\end{enumerate}
-	\item \addcontentsline{toc}{subsection}{4.2}\hfill
+	\item \addcontentsline{toc}{section}{4.2}\hfill
 		\begin{enumerate}[label=\alph*)]
 		\item $N = 60$\hfill
 			\lstinputlisting[caption={ex4\_2a.R}]{./recursos/ex4_2a.R}
@@ -200,13 +201,13 @@ $[\lceil \overline{x} - s \rceil, \lfloor \overline{x} + s \rfloor]$.
 				\caption{Tabela de 4.2 b)}
 			\end{table}
 			\lstinputlisting[caption={ex4\_2b.R}]{./recursos/ex4_2b.R}
+			\clearpage
 		\item \hfill
 			\begin{align*}
 				\overline{x} &= 1260 \\
 				s &= 54.5552122756449
 			\end{align*}
 			\lstinputlisting[caption={ex4\_2c.R}]{./recursos/ex4_2c.R}
-			\clearpage
 		\item \hfill
 			\begin{figure}[h!]
 				\centering
@@ -215,7 +216,7 @@ $[\lceil \overline{x} - s \rceil, \lfloor \overline{x} + s \rfloor]$.
 			\end{figure}
 			\lstinputlisting[caption={ex4\_2d.R}]{./recursos/ex4_2d.R}
 		\end{enumerate}
-		\item \addcontentsline{toc}{subsection}{4.3}\hfill
+		\item \addcontentsline{toc}{section}{4.3}\hfill
 		\begin{enumerate}[label=\alph*)]
 		\item $\overline{x} = 64.26667$\hfill
 			\lstinputlisting[caption={ex4\_3a.R}]{./recursos/ex4_3a.R}
@@ -223,7 +224,7 @@ $[\lceil \overline{x} - s \rceil, \lfloor \overline{x} + s \rfloor]$.
 			\lstinputlisting[caption={ex4\_3b.R}]{./recursos/ex4_3b.R}
 		\end{enumerate}
 		\clearpage
-	\item \addcontentsline{toc}{subsection}{4.4}\hfill
+	\item \addcontentsline{toc}{section}{4.4}\hfill
 		\begin{enumerate}[label=\alph*)]
 		\item \hfill
 			\begin{figure}[h!]
@@ -248,14 +249,13 @@ $[\lceil \overline{x} - s \rceil, \lfloor \overline{x} + s \rfloor]$.
 
 \clearpage
 \printbibliography[heading=bibintoc,title={Bibliografia}]
-\listoftables\addcontentsline{toc}{section}{Lista de Tabelas}
-\listoffigures\addcontentsline{toc}{section}{Lista de Figuras}
-\listoflistings\addcontentsline{toc}{section}{Lista de Listagens}
+\listoftables\addcontentsline{toc}{chapter}{Lista de Tabelas}
+\listoffigures\addcontentsline{toc}{chapter}{Lista de Figuras}
+\listoflistings\addcontentsline{toc}{chapter}{Lista de Listagens}
 
-\clearpage
 \appendix
 
-\section{Datasets}
+\chapter{Datasets}
 
 \begin{table}[ht!]
 	\begin{minipage}[t]{0.4\textwidth}
