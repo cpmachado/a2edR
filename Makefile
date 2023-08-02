@@ -1,3 +1,4 @@
+VERSION = $(shell cat VERSION)
 MAIN = a2edR.tex
 RES = $(wildcard ./recursos/**/*)
 OUT=${MAIN:.tex=.pdf}
@@ -6,13 +7,15 @@ LATEX=latexmk -pdf
 LATEX_CLEAN=latexmk -c
 LATEX_WATCH=latexmk -pdf -pvc
 PKG = \
-	a2edR.tex\
-	bibliografia.bib\
+	CHANGELOG.md\
 	LICENSE\
 	Makefile\
 	README.md\
-	recursos\
-	a2edR.pdf
+	VERSION\
+	a2edR.pdf\
+	a2edR.tex\
+	bibliografia.bib\
+	recursos
 
 ${OUT}: ${SRC} ${RES} recursos.zip
 	${LATEX} ${MAIN}
@@ -22,7 +25,7 @@ recursos.zip: ${RES}
 
 dist: clean
 	make a2edR.pdf
-	zip -rv a2edR.zip ${PKG}
+	zip -rv a2edR-${VERSION}.zip ${PKG}
 
 clean:
 	$(foreach file,${SRC}, ${LATEX_CLEAN} ${file};)
