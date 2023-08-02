@@ -7,7 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+- Exercício 3.3
+
+### Changed
 - Ajuste no Makefile
+- Ajustes no layout
 
 ## [0.1.0]
 

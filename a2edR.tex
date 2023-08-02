@@ -9,7 +9,7 @@
 \usepackage{enumitem}
 \usepackage{listings}
 \usepackage{listing}
-\usepackage{xcolor}
+\usepackage[svgnames]{xcolor}
 \usepackage{eurosym}
 \usepackage{csvsimple}
 \usepackage{biblatex}
@@ -41,7 +41,7 @@
 	breaklines=true,
 	breakatwhitespace=false,
 	keywordstyle=\color{blue},
-	commentstyle=\color{dkgreen},
+	commentstyle=\color{DarkGreen},
 	escapeinside={\%*}{*)},
 	literate=
 		{á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1
@@ -62,6 +62,8 @@
 		{º}{\textdegree}1
 }
 
+\renewcommand*{\listlistingname}{Lista de Listagens}
+
 \begin{document}
 \maketitle
 \tableofcontents
@@ -78,8 +80,6 @@ exercícios propostos. O presente documento pretende documentar soluções para 
 mesmo com recurso à Bibliografia recomendada do mesmo
 documento\cite{OliveiraEstatisticaDescritiva2011}.
 
-\paragraph{} Falta completar o exercício 3.3.
-
 \section*{Notas de Implementação}\addcontentsline{toc}{section}{Notas de Implementação}
 
 \paragraph{} Para carregamento dos dados, foram utilizados ficheiros csv que
@@ -87,6 +87,7 @@ criam objectos dataframe. Esta abordagem parece ser mais razoável, dado que
 podemos ter ficheiros com milhares de amostras.
 
 \paragraph{} Em anexo, estão os recursos, código e datasets, em zip:
+
 \attachfile[icon=Paperclip]{recursos.zip}
 
 \clearpage
@@ -113,16 +114,15 @@ podemos ter ficheiros com milhares de amostras.
 		\hline
 	\end{tabular}
 	\caption{Exercício 3.1 - Frequências simples e relativas de irmãos}
+	\label{tab:3.1}
 \end{table}
 \lstinputlisting[caption={ex3\_1.R}]{./recursos/ex3_1.R}
-
-\clearpage
 
 \subsection{Visualização de dados usando o R}
 
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width=0.7\textwidth]{./recursos/ex3_2.png}
+	\includegraphics[width=0.4\textwidth]{./recursos/ex3_2.png}
 	\caption{Exercício 3.2 - Gráfico circular de idas ao supermercado}
 \end{figure}
 \lstinputlisting[caption={ex3\_2.R}]{./recursos/ex3_2.R}
@@ -132,11 +132,34 @@ podemos ter ficheiros com milhares de amostras.
 
 \begin{align*}
 	\overline{x} &= 1.2\\
-	s &= 1.06698713134767
+	s &\approx 1.067 \\
+	\frac{s}{\overline{x}} &\approx 0.889 = 88.9 \%
 \end{align*}
+
+\paragraph{} A média permite-nos localizar a tendência central em redor dos
+1.2 irmãos, e o desvio padrão de aproximadamente 1.067, permite-nos verificar
+a dispersão associada. Sendo que o quociente do desvio padrão para com a média
+é relativamente alto, permite-nos concluir que o esbatimento da curva é
+rápido.
+
+\paragraph{} Podemos verificar no gráfico \ref{fig:ex3_3} esse facto. Aparecem
+também duas linhas a vermelho, demonstrando o conjunto de amostras no
+intervalo com centro na média e raio de cumprimento do desvio
+padrão($\overline{x} \pm s$). Data a natureza discreta da amostra fez-se uns
+ajustes, sendo o intervalo dado por:
+$[\lfloor \overline{x} - s \rfloor, \lceil \overline{x} + s \rceil]$.
+
+\vspace{0.5cm}
+
 \lstinputlisting[caption={ex3\_3.R}]{./recursos/ex3_3.R}
 
-\paragraph{POR COMPLETAR\ldots}
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.4\textwidth]{./recursos/ex3_3.png}
+	\caption{Exercício da secção 3.3 - Distribuição de irmãos por pessoa}
+	\label{fig:ex3_3}
+\end{figure}
 
 \clearpage
 \section{Exercícios}
@@ -150,7 +173,6 @@ podemos ter ficheiros com milhares de amostras.
 		\item $s = 1.378954$\hfill
 			\lstinputlisting[caption={ex4\_1b.R}]{./recursos/ex4_1b.R}
 		\end{enumerate}
-		\clearpage
 	\item \addcontentsline{toc}{subsection}{4.2}\hfill
 		\begin{enumerate}[label=\alph*)]
 		\item $N = 60$\hfill
@@ -188,12 +210,11 @@ podemos ter ficheiros com milhares de amostras.
 		\item \hfill
 			\begin{figure}[h!]
 				\centering
-				\includegraphics[width=0.7\textwidth]{./recursos/ex4_2d.png}
+				\includegraphics[width=0.4\textwidth]{./recursos/ex4_2d.png}
 				\caption{Exercício 4.2 d) - Distribuição dos salários por nº de colaboradores}
 			\end{figure}
 			\lstinputlisting[caption={ex4\_2d.R}]{./recursos/ex4_2d.R}
 		\end{enumerate}
-		\clearpage
 		\item \addcontentsline{toc}{subsection}{4.3}\hfill
 		\begin{enumerate}[label=\alph*)]
 		\item $\overline{x} = 64.26667$\hfill
@@ -207,7 +228,7 @@ podemos ter ficheiros com milhares de amostras.
 		\item \hfill
 			\begin{figure}[h!]
 				\centering
-				\includegraphics[width=0.7\textwidth]{./recursos/ex4_4a.png}
+				\includegraphics[width=0.4\textwidth]{./recursos/ex4_4a.png}
 				\caption{Exercício 4.4 a) - Taxa de Inflação por país}
 			\end{figure}
 			\lstinputlisting[caption={ex4\_4a.R}]{./recursos/ex4_4a.R}
@@ -215,7 +236,7 @@ podemos ter ficheiros com milhares de amostras.
 		\item \hfill
 			\begin{figure}[h!]
 				\centering
-				\includegraphics[width=0.7\textwidth]{./recursos/ex4_4b.png}
+				\includegraphics[width=0.4\textwidth]{./recursos/ex4_4b.png}
 				\caption{Exercício 4.4 b) - Taxa de inflação por país(Gráfico
 				circular)}
 			\end{figure}
@@ -229,7 +250,7 @@ podemos ter ficheiros com milhares de amostras.
 \printbibliography[heading=bibintoc,title={Bibliografia}]
 \listoftables\addcontentsline{toc}{section}{Lista de Tabelas}
 \listoffigures\addcontentsline{toc}{section}{Lista de Figuras}
-\listoflistings
+\listoflistings\addcontentsline{toc}{section}{Lista de Listagens}
 
 \clearpage
 \appendix
