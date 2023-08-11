@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+- editorconfig para o repositório
+
 ## [1.1.0]
 ### Changed
 - Zip de distribuição com a versão
