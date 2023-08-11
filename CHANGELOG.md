@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - Alteração no script de lint no Makefile
 - Remover recursos anexados no pdf
+- Expandir referência da AULA AbERTA, para o mencionar como subtítulo
 
 ## [1.1.0]
 ### Changed
