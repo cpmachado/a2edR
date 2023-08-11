@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Expandir referência da AULA AbERTA, para o mencionar como subtítulo
 - Remover datasets de appendix
 - Remover lista de listagens de código
+- Agrupar bibliografia, lista de tabelas e figuras
 
 ## [1.1.0]
 ### Changed
