@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Remover recursos anexados no pdf
 - Expandir referência da AULA AbERTA, para o mencionar como subtítulo
 - Remover datasets de appendix
+- Remover lista de listagens de código
 
 ## [1.1.0]
 ### Changed
