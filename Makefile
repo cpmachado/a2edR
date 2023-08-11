@@ -1,8 +1,7 @@
 VERSION = $(shell cat VERSION)
 MAIN = a2edR.tex
-RES = $(wildcard ./recursos/**/*)
+RES = $(shell find recursos)
 OUT=${MAIN:.tex=.pdf}
-SRC=$(wildcard *.tex)
 LATEX=latexmk -pdf
 LATEX_CLEAN=latexmk -c
 LATEX_WATCH=latexmk -pdf -pvc
@@ -17,11 +16,8 @@ PKG = \
 	bibliografia.bib\
 	recursos
 
-${OUT}: ${SRC} ${RES} recursos.zip
+${OUT}: ${MAIN} ${RES}
 	${LATEX} ${MAIN}
-
-recursos.zip: ${RES}
-	zip -rv recursos.zip recursos
 
 dist: clean
 	make a2edR.pdf

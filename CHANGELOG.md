@@ -9,9 +9,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 - editorconfig para o repositório
+- Referência ao repositório, para download dos recursos
 
 ### Changed
 - Alteração no script de lint no Makefile
+- Remover recursos anexados no pdf
 
 ## [1.1.0]
 ### Changed
