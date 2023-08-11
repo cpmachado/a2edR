@@ -10,6 +10,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - editorconfig para o repositório
 
+### Changed
+- Alteração no script de lint no Makefile
+
 ## [1.1.0]
 ### Changed
 - Zip de distribuição com a versão

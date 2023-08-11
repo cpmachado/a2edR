@@ -32,7 +32,7 @@ clean:
 	rm -f *.atfi *.zip *.bbl *.run.xml *.synctex.gz *.lol
 
 lint:
-	Rscript -e 'library(lintr);lint_dir("./recursos/")'
+	Rscript -e 'library(lintr);lint_dir(".")'
 
 watch:
 	${LATEX_WATCH} ${MAIN}
