@@ -31,7 +31,6 @@ PKG = \
 	codigo\
 	dataset\
 	imagem\
-	recursos\
 	tabela
 
 ${OUT}: ${MAIN} ${RSCRIPTS} ${DATASETS} ${TABLES} ${IMAGES}
