@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Expandir referência da AULA AbERTA, para o mencionar como subtítulo
 - Agrupar bibliografia, lista de tabelas e figuras
 - Redesenho de Makefile
+- Reorganização do repositório
 
 ### Removed
 - Remover recursos anexados no pdf

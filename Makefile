@@ -5,6 +5,8 @@ RSCRIPTS = $(wildcard codigo/**/*)
 DATASETs = $(wildcard dataset/**/*)
 TABLES = \
 	tabela/ieedr/ex3_1.csv
+IMAGES = \
+	imagem/ieedr/ex3_2.png
 OUT=${MAIN:.tex=.pdf}
 PKG = \
 	CHANGELOG.md\
@@ -17,10 +19,11 @@ PKG = \
 	bibliografia.bib\
 	codigo\
 	dataset\
+	imagem\
 	recursos\
 	tabela
 
-${OUT}: ${MAIN} ${RSCRIPTS} ${DATASETS} ${TABLES}
+${OUT}: ${MAIN} ${RSCRIPTS} ${DATASETS} ${TABLES} ${IMAGES}
 	latexmk -quiet $(PREVIEW_CONTINUOUSLY) -use-make -pdf a2edR.tex
 
 watch: PREVIEW_CONTINUOUSLY=-pvc
@@ -49,6 +52,11 @@ r-scripts: ${RSCRIPTS}
 tabela/ieedr/%.csv: codigo/ieedr/%.R
 	Rscript $<
 
+imagem/ieedr/%.png: codigo/ieedr/%.R
+	Rscript $<
+
 tabela/ieedr/ex3_1.csv: codigo/ieedr/ex3_1.R
+
+imagem/ieedr/ex3_2.png: codigo/ieedr/ex3_2.R
 
 .PHONY: clean dist lint r-scripts style watch 
