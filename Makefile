@@ -55,8 +55,9 @@ tabela/ieedr/%.csv: codigo/ieedr/%.R
 imagem/ieedr/%.png: codigo/ieedr/%.R
 	Rscript $<
 
-tabela/ieedr/ex3_1.csv: codigo/ieedr/ex3_1.R
 
+tabela/ieedr/ex3_1.csv: codigo/ieedr/ex3_1.R
 imagem/ieedr/ex3_2.png: codigo/ieedr/ex3_2.R
+imagem/ieedr/ex3_3.png: codigo/ieedr/ex3_3.R
 
 .PHONY: clean dist lint r-scripts style watch 

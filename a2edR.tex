@@ -143,21 +143,26 @@ também duas linhas a vermelho, demonstrando o conjunto de amostras no
 intervalo com centro na média e raio de cumprimento do desvio
 padrão($\overline{x} \pm s$). Data a natureza discreta da amostra fez-se uns
 ajustes, sendo o intervalo dado por:
-$[\lceil \overline{x} - s \rceil, \lfloor \overline{x} + s \rfloor]$.
 
-\vspace{0.5cm}
-
-\lstinputlisting[caption={ex3\_3.R}]{recursos/ex3_3.R}
+\begin{align*}
+	\lceil \overline{x} - s \rceil &= \lceil 1.2 - 1.067 \rceil =  1 \\
+	\lfloor \overline{x} + s \rfloor &= \lfloor 1.2 + 1.067 \rfloor = 2 \\
+	I &= [\lceil \overline{x} - s \rceil, \lfloor \overline{x} + s \rfloor] =
+	[1, 2]
+\end{align*}
 
 
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width=0.4\textwidth]{recursos/ex3_3.png}
-	\caption{Exercício da secção 3.3 - Distribuição de irmãos por pessoa}
+	\includegraphics[width=0.7\textwidth]{imagem/ieedr/ex3_3.png}
+	\caption{Distribuição de irmãos por pessoa}
 	\label{fig:ex3_3}
 \end{figure}
 
 \clearpage
+
+\lstinputlisting[caption={ex3\_3.R}]{codigo/ieedr/ex3_3.R}
+
 \chapter{Exercícios}
 \section*{Exercícios Propostos}
 
