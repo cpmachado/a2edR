@@ -102,7 +102,7 @@ estão os recursos, código e datasets, em zip:
 \begin{table}[h!]
 	\centering
 	\csvreader[
-		tabular = |c|c|c|c|,
+		tabular = |c|c|r|l|,
 		late after line = \\\hline,
 		table head = \hline $i$ & $x_i$ & $n_i$ & $f_i$ \\ \hline
 	]{tabela/ieedr/ex3_1.csv}{xi=\xi, ni=\ni, fi=\sfi}{
@@ -173,55 +173,46 @@ ajustes, sendo o intervalo dado por:
 		\item $\overline{x} = 19.41667$\hfill
 		\item $s = 1.378954$\hfill
 		\end{enumerate}
-	\item \addcontentsline{toc}{section}{4.2}\hfill
+	\clearpage
+	\item \addcontentsline{toc}{section}{4.2}\hfill\\
+		\lstinputlisting[caption={ex4\_2.R}]{codigo/ieedr/ex4_2.R}
 		\begin{enumerate}[label=\alph*)]
-		\item $N = 60$\hfill
-			\lstinputlisting[caption={ex4\_2a.R}]{recursos/ex4_2a.R}
-		\item \hfill
+		\item $N = 60$
+		\item \hfill\\
 			\begin{table}[h!]
 				\centering
-				\begin{tabular}{|c|c|c|c|}
-					\hline
-					$x_i$&$n_i$&$N_i$&$f_i$ \\
-					\hline
-					1000&10&10&0.1666667\\
-					\hline
-					1100& 8&18&0.1333333\\
-					\hline
-					1200&12&30&0.2000000\\
-					\hline
-					1300& 8&38&0.1333333\\
-					\hline
-					1400&10&48&0.1666667\\
-					\hline
-					1500&12&60&0.2000000\\
-					\hline
-				\end{tabular}
-				\caption{Tabela de 4.2 b)}
+				\csvreader[
+					tabular = |c|c|r|r|l|l|,
+					late after line = \\\hline,
+					table head = \hline $i$ & $x_i$ & $n_i$ & $N_i$
+											& $f_i$ & $F_i$ \\ \hline
+				]{tabela/ieedr/ex4_2b.csv}
+				{xi=\xi, ni=\ni, Ni=\Ni, fi=\sfi, Fi=\Fi}{
+					\thecsvrow & \xi & \ni & \Ni & \sfi & \Fi
+				}
+				\caption{Tabela de frequências da distribuição de salários}
 			\end{table}
-			\lstinputlisting[caption={ex4\_2b.R}]{recursos/ex4_2b.R}
-			\clearpage
-		\item \hfill
+		\item \hfill \\
 			\begin{align*}
 				\overline{x} &= 1260 \\
 				s &= 54.5552122756449
 			\end{align*}
-			\lstinputlisting[caption={ex4\_2c.R}]{recursos/ex4_2c.R}
-		\item \hfill
+	\clearpage
+		\item \hfill \\
 			\begin{figure}[h!]
 				\centering
-				\includegraphics[width=0.4\textwidth]{recursos/ex4_2d.png}
-				\caption{Exercício 4.2 d) - Distribuição dos salários por nº de colaboradores}
+				\includegraphics[width=0.6\textwidth]{imagem/ieedr/ex4_2d.png}
+				\caption{Distribuição dos salários por nº de colaboradores}
 			\end{figure}
-			\lstinputlisting[caption={ex4\_2d.R}]{recursos/ex4_2d.R}
 		\end{enumerate}
+	\clearpage
 	\item \addcontentsline{toc}{section}{4.3}\hfill \\
 		\lstinputlisting[caption={ex4\_3.R}]{codigo/ieedr/ex4_3.R}
 		\begin{enumerate}[label=\alph*)]
 		\item $\overline{x} = 64.26667$
 		\item $s = 9.676678$
 		\end{enumerate}
-		\clearpage
+	\clearpage
 	\item \addcontentsline{toc}{section}{4.4}\hfill
 		\begin{enumerate}[label=\alph*)]
 		\item \hfill

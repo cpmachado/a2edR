@@ -6,7 +6,7 @@ n <- sum(df$ni)
 print(paste0("N: ", n))
 
 # Exercício 4.2 b
-df <- transform(df, Ni = cumsum(ni), fi = prop.table(ni))
+df <- transform(df, Ni = cumsum(ni), fi = round(prop.table(ni), 3))
 df <- transform(df, Fi = cumsum(fi))
 write.csv(
   df,

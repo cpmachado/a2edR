@@ -1,12 +1,21 @@
 VERSION = $(shell cat VERSION)
 MAIN = a2edR.tex
 RES = $(wildcard recursos/**/*)
-RSCRIPTS = $(wildcard codigo/**/*)
+RSCRIPTS = \
+	codigo/ieedr/ex3_1.R\
+	codigo/ieedr/ex3_2.R\
+	codigo/ieedr/ex3_3.R\
+	codigo/ieedr/ex4_1.R\
+	codigo/ieedr/ex4_2.R\
+	codigo/ieedr/ex4_3.R
 DATASETs = $(wildcard dataset/**/*)
 TABLES = \
-	tabela/ieedr/ex3_1.csv
+	tabela/ieedr/ex3_1.csv\
+	tabela/ieedr/ex4_2b.csv
 IMAGES = \
-	imagem/ieedr/ex3_2.png
+	imagem/ieedr/ex3_2.png\
+	imagem/ieedr/ex3_3.png\
+	imagem/ieedr/ex4_2d.png
 OUT=${MAIN:.tex=.pdf}
 PKG = \
 	CHANGELOG.md\
@@ -59,5 +68,7 @@ imagem/ieedr/%.png: codigo/ieedr/%.R
 tabela/ieedr/ex3_1.csv: codigo/ieedr/ex3_1.R
 imagem/ieedr/ex3_2.png: codigo/ieedr/ex3_2.R
 imagem/ieedr/ex3_3.png: codigo/ieedr/ex3_3.R
+tabela/ieedr/ex4_2b.csv: codigo/ieedr/ex4_2.R
+imagem/ieedr/ex4_2d.png: codigo/ieedr/ex4_2.R
 
 .PHONY: clean dist lint r-scripts style watch 
