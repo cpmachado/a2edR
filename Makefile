@@ -17,7 +17,8 @@ IMAGES = \
 	imagem/ieedr/ex3_2.png\
 	imagem/ieedr/ex3_3.png\
 	imagem/ieedr/ex4_2d.png\
-	imagem/ieedr/ex4_4a.png
+	imagem/ieedr/ex4_4a.png\
+	imagem/ieedr/ex4_4b.png
 OUT=${MAIN:.tex=.pdf}
 PKG = \
 	CHANGELOG.md\
