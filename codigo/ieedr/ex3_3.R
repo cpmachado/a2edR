@@ -1,6 +1,10 @@
 xi <- read.csv(file.path("dataset", "ieedr", "irmaos.csv"))$x
 df <- data.frame(media = mean(xi), desvio = sd(xi))
-df <- transform(df, xmin = ceiling(media - desvio), xmax = floor(media + desvio))
+df <- transform(
+  df,
+  xmin = ceiling(media - desvio),
+  xmax = floor(media + desvio)
+)
 print(df)
 
 png(file.path("imagem", "ieedr", "ex3_3.png"))
