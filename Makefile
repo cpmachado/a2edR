@@ -7,7 +7,8 @@ RSCRIPTS = \
 	codigo/ieedr/ex3_3.R\
 	codigo/ieedr/ex4_1.R\
 	codigo/ieedr/ex4_2.R\
-	codigo/ieedr/ex4_3.R
+	codigo/ieedr/ex4_3.R\
+	codigo/ieedr/ex4_4.R
 DATASETs = $(wildcard dataset/**/*)
 TABLES = \
 	tabela/ieedr/ex3_1.csv\
@@ -15,7 +16,8 @@ TABLES = \
 IMAGES = \
 	imagem/ieedr/ex3_2.png\
 	imagem/ieedr/ex3_3.png\
-	imagem/ieedr/ex4_2d.png
+	imagem/ieedr/ex4_2d.png\
+	imagem/ieedr/ex4_4a.png
 OUT=${MAIN:.tex=.pdf}
 PKG = \
 	CHANGELOG.md\
@@ -55,20 +57,15 @@ lint:
 style:
 	Rscript -e 'library(styler);style_dir(".")'
 
-r-scripts: ${RSCRIPTS}
-	$(foreach script,${RSCRIPTS}, Rscript ${script};)
-
-tabela/ieedr/%.csv: codigo/ieedr/%.R
+tabela/ieedr/ex3_1.csv: codigo/ieedr/ex3_1.R dataset/ieedr/irmaos.csv
 	Rscript $<
-
-imagem/ieedr/%.png: codigo/ieedr/%.R
+imagem/ieedr/ex3_2.png: codigo/ieedr/ex3_2.R dataset/ieedr/idas.csv
 	Rscript $<
-
-
-tabela/ieedr/ex3_1.csv: codigo/ieedr/ex3_1.R
-imagem/ieedr/ex3_2.png: codigo/ieedr/ex3_2.R
-imagem/ieedr/ex3_3.png: codigo/ieedr/ex3_3.R
-tabela/ieedr/ex4_2b.csv: codigo/ieedr/ex4_2.R
-imagem/ieedr/ex4_2d.png: codigo/ieedr/ex4_2.R
+imagem/ieedr/ex3_3.png: codigo/ieedr/ex3_3.R dataset/ieedr/irmaos.csv
+	Rscript $<
+tabela/ieedr/ex4_2b.csv imagem/ieedr/ex4_2d.png: codigo/ieedr/ex4_2.R dataset/ieedr/4_2.csv
+	Rscript $<
+imagem/ieedr/ex4_4a.png imagem/ieedr/ex4_4b.png: codigo/ieedr/ex4_4.R dataset/ieedr/4_4.csv
+	Rscript $<
 
 .PHONY: clean dist lint r-scripts style watch 
