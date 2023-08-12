@@ -10,14 +10,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - editorconfig para o repositório
 - Referência ao repositório, para download dos recursos
+- Formatação usando styler e script no Makefile
 
 ### Changed
 - Alteração no script de lint no Makefile
-- Remover recursos anexados no pdf
 - Expandir referência da AULA AbERTA, para o mencionar como subtítulo
+- Agrupar bibliografia, lista de tabelas e figuras
+- Redesenho de Makefile
+
+### Removed
+- Remover recursos anexados no pdf
 - Remover datasets de appendix
 - Remover lista de listagens de código
-- Agrupar bibliografia, lista de tabelas e figuras
+
 
 ## [1.1.0]
 ### Changed
