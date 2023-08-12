@@ -97,27 +97,20 @@ estão os recursos, código e datasets, em zip:
 \chapter{Estatística Descritiva com R}
 \section{Organização de dados no R}
 
+\lstinputlisting[caption={ex3\_1.R}]{./codigo/ieedr/ex3_1.R}
+
 \begin{table}[h!]
 	\centering
-	\begin{tabular}{|c|c|c|}
-		\hline
-		$x_i$&$n_i$&$f_i$ \\
-		\hline
-		0&11&0.275\\
-		\hline
-		1&16&0.400\\
-		\hline
-		2& 9&0.225\\
-		\hline
-		3& 2&0.050\\
-		\hline
-		4& 2&0.050\\
-		\hline
-	\end{tabular}
-	\caption{Exercício 3.1 - Frequências simples e relativas de irmãos}
+	\csvreader[
+		tabular = |c|c|c|c|,
+		late after line = \\\hline,
+		table head = \hline $i$ & $x_i$ & $n_i$ & $f_i$ \\ \hline
+	]{./tabela/ieedr/ex3_1.csv}{xi=\xi, ni=\ni, fi=\sfi}{
+		\thecsvrow & \xi & \ni & \sfi
+	}
+	\caption{Frequências simples e relativas de irmãos}
 	\label{tab:3.1}
 \end{table}
-\lstinputlisting[caption={ex3\_1.R}]{./recursos/ex3_1.R}
 
 \clearpage
 
