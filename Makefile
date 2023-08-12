@@ -1,10 +1,11 @@
 VERSION = $(shell cat VERSION)
 MAIN = a2edR.tex
-RES = $(shell find recursos)
+RES = $(wildcard recursos/**/*)
+RSCRIPTS = $(wildcard codigo/**/*)
+DATASETs = $(wildcard dataset/**/*)
+TABLES = \
+	tabela/ieedr/ex3_1.csv
 OUT=${MAIN:.tex=.pdf}
-LATEX=latexmk -pdf
-LATEX_CLEAN=latexmk -c
-LATEX_WATCH=latexmk -pdf -pvc
 PKG = \
 	CHANGELOG.md\
 	LICENSE\
@@ -14,23 +15,40 @@ PKG = \
 	a2edR.pdf\
 	a2edR.tex\
 	bibliografia.bib\
-	recursos
+	codigo\
+	dataset\
+	recursos\
+	tabela
 
-${OUT}: ${MAIN} ${RES}
-	${LATEX} ${MAIN}
+${OUT}: ${MAIN} ${RSCRIPTS} ${DATASETS} ${TABLES}
+	latexmk -quiet $(PREVIEW_CONTINUOUSLY) -use-make -pdf a2edR.tex
+
+watch: PREVIEW_CONTINUOUSLY=-pvc
+watch: ${OUT}
 
 dist: clean
-	make a2edR.pdf
-	zip -rv a2edR-${VERSION}.zip ${PKG}
+	make ${OUT}
+	mkdir a2edR-${VERSION}
+	cp -rv ${PKG} a2edR-${VERSION}
+	zip -rv a2edR-${VERSION}.zip a2edR-${VERSION}
+	rm -rf a2edR-${VERSION}
 
 clean:
-	$(foreach file,${SRC}, ${LATEX_CLEAN} ${file};)
-	rm -f *.atfi *.zip *.bbl *.run.xml *.synctex.gz *.lol
+	@latexmk -C -bibtex
+	@rm -f *.atfi *.zip *.bbl *.run.xml *.synctex.gz *.lol
 
 lint:
 	Rscript -e 'library(lintr);lint_dir(".")'
 
-watch:
-	${LATEX_WATCH} ${MAIN}
+style:
+	Rscript -e 'library(styler);style_dir(".")'
 
-.PHONY: clean watch dist lint
+r-scripts: ${RSCRIPTS}
+	$(foreach script,${RSCRIPTS}, Rscript ${script};)
+
+tabela/ieedr/%.csv: codigo/ieedr/%.R
+	Rscript $<
+
+tabela/ieedr/ex3_1.csv: codigo/ieedr/ex3_1.R
+
+.PHONY: clean dist lint r-scripts style watch 

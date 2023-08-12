@@ -20,7 +20,7 @@
 
 \title{Exercícios Resolvidos da AULA AbERTA: Introdução à Estatística}
 
-\addbibresource{./bibliografia.bib}
+\addbibresource{bibliografia.bib}
 \makeindex
 \lstset{
 	language=R,
@@ -97,7 +97,7 @@ estão os recursos, código e datasets, em zip:
 \chapter{Estatística Descritiva com R}
 \section{Organização de dados no R}
 
-\lstinputlisting[caption={ex3\_1.R}]{./codigo/ieedr/ex3_1.R}
+\lstinputlisting[caption={ex3\_1.R}]{codigo/ieedr/ex3_1.R}
 
 \begin{table}[h!]
 	\centering
@@ -105,7 +105,7 @@ estão os recursos, código e datasets, em zip:
 		tabular = |c|c|c|c|,
 		late after line = \\\hline,
 		table head = \hline $i$ & $x_i$ & $n_i$ & $f_i$ \\ \hline
-	]{./tabela/ieedr/ex3_1.csv}{xi=\xi, ni=\ni, fi=\sfi}{
+	]{tabela/ieedr/ex3_1.csv}{xi=\xi, ni=\ni, fi=\sfi}{
 		\thecsvrow & \xi & \ni & \sfi
 	}
 	\caption{Frequências simples e relativas de irmãos}
@@ -118,10 +118,10 @@ estão os recursos, código e datasets, em zip:
 
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width=0.4\textwidth]{./recursos/ex3_2.png}
+	\includegraphics[width=0.4\textwidth]{recursos/ex3_2.png}
 	\caption{Exercício 3.2 - Gráfico circular de idas ao supermercado}
 \end{figure}
-\lstinputlisting[caption={ex3\_2.R}]{./recursos/ex3_2.R}
+\lstinputlisting[caption={ex3\_2.R}]{recursos/ex3_2.R}
 
 \clearpage
 \section{Redução de dados: média aritmética e desvio padrão}
@@ -147,12 +147,12 @@ $[\lceil \overline{x} - s \rceil, \lfloor \overline{x} + s \rfloor]$.
 
 \vspace{0.5cm}
 
-\lstinputlisting[caption={ex3\_3.R}]{./recursos/ex3_3.R}
+\lstinputlisting[caption={ex3\_3.R}]{recursos/ex3_3.R}
 
 
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width=0.4\textwidth]{./recursos/ex3_3.png}
+	\includegraphics[width=0.4\textwidth]{recursos/ex3_3.png}
 	\caption{Exercício da secção 3.3 - Distribuição de irmãos por pessoa}
 	\label{fig:ex3_3}
 \end{figure}
@@ -165,14 +165,14 @@ $[\lceil \overline{x} - s \rceil, \lfloor \overline{x} + s \rfloor]$.
 	\item \addcontentsline{toc}{section}{4.1}
 		\begin{enumerate}[label=\alph*)]
 		\item $\overline{x} = 19.41667$\hfill
-			\lstinputlisting[caption={ex4\_1a.R}]{./recursos/ex4_1a.R}
+			\lstinputlisting[caption={ex4\_1a.R}]{recursos/ex4_1a.R}
 		\item $s = 1.378954$\hfill
-			\lstinputlisting[caption={ex4\_1b.R}]{./recursos/ex4_1b.R}
+			\lstinputlisting[caption={ex4\_1b.R}]{recursos/ex4_1b.R}
 		\end{enumerate}
 	\item \addcontentsline{toc}{section}{4.2}\hfill
 		\begin{enumerate}[label=\alph*)]
 		\item $N = 60$\hfill
-			\lstinputlisting[caption={ex4\_2a.R}]{./recursos/ex4_2a.R}
+			\lstinputlisting[caption={ex4\_2a.R}]{recursos/ex4_2a.R}
 		\item \hfill
 			\begin{table}[h!]
 				\centering
@@ -195,28 +195,28 @@ $[\lceil \overline{x} - s \rceil, \lfloor \overline{x} + s \rfloor]$.
 				\end{tabular}
 				\caption{Tabela de 4.2 b)}
 			\end{table}
-			\lstinputlisting[caption={ex4\_2b.R}]{./recursos/ex4_2b.R}
+			\lstinputlisting[caption={ex4\_2b.R}]{recursos/ex4_2b.R}
 			\clearpage
 		\item \hfill
 			\begin{align*}
 				\overline{x} &= 1260 \\
 				s &= 54.5552122756449
 			\end{align*}
-			\lstinputlisting[caption={ex4\_2c.R}]{./recursos/ex4_2c.R}
+			\lstinputlisting[caption={ex4\_2c.R}]{recursos/ex4_2c.R}
 		\item \hfill
 			\begin{figure}[h!]
 				\centering
-				\includegraphics[width=0.4\textwidth]{./recursos/ex4_2d.png}
+				\includegraphics[width=0.4\textwidth]{recursos/ex4_2d.png}
 				\caption{Exercício 4.2 d) - Distribuição dos salários por nº de colaboradores}
 			\end{figure}
-			\lstinputlisting[caption={ex4\_2d.R}]{./recursos/ex4_2d.R}
+			\lstinputlisting[caption={ex4\_2d.R}]{recursos/ex4_2d.R}
 		\end{enumerate}
 		\item \addcontentsline{toc}{section}{4.3}\hfill
 		\begin{enumerate}[label=\alph*)]
 		\item $\overline{x} = 64.26667$\hfill
-			\lstinputlisting[caption={ex4\_3a.R}]{./recursos/ex4_3a.R}
+			\lstinputlisting[caption={ex4\_3a.R}]{recursos/ex4_3a.R}
 		\item $s = 9.676678$\hfill
-			\lstinputlisting[caption={ex4\_3b.R}]{./recursos/ex4_3b.R}
+			\lstinputlisting[caption={ex4\_3b.R}]{recursos/ex4_3b.R}
 		\end{enumerate}
 		\clearpage
 	\item \addcontentsline{toc}{section}{4.4}\hfill
@@ -224,21 +224,21 @@ $[\lceil \overline{x} - s \rceil, \lfloor \overline{x} + s \rfloor]$.
 		\item \hfill
 			\begin{figure}[h!]
 				\centering
-				\includegraphics[width=0.4\textwidth]{./recursos/ex4_4a.png}
+				\includegraphics[width=0.4\textwidth]{recursos/ex4_4a.png}
 				\caption{Exercício 4.4 a) - Taxa de Inflação por país}
 			\end{figure}
-			\lstinputlisting[caption={ex4\_4a.R}]{./recursos/ex4_4a.R}
+			\lstinputlisting[caption={ex4\_4a.R}]{recursos/ex4_4a.R}
 		\clearpage
 		\item \hfill
 			\begin{figure}[h!]
 				\centering
-				\includegraphics[width=0.4\textwidth]{./recursos/ex4_4b.png}
+				\includegraphics[width=0.4\textwidth]{recursos/ex4_4b.png}
 				\caption{Exercício 4.4 b) - Taxa de inflação por país(Gráfico
 				circular)}
 			\end{figure}
-			\lstinputlisting[caption={ex4\_4b.R}]{./recursos/ex4_4b.R}
+			\lstinputlisting[caption={ex4\_4b.R}]{recursos/ex4_4b.R}
 		\item $\overline{x} = 1.533333$\hfill
-			\lstinputlisting[caption={ex4\_4c.R}]{./recursos/ex4_4c.R}
+			\lstinputlisting[caption={ex4\_4c.R}]{recursos/ex4_4c.R}
 		\end{enumerate}
 \end{enumerate}
 
