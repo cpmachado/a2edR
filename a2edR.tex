@@ -1,7 +1,7 @@
 \documentclass[11pt,a4paper]{report}
+\usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[portuguese]{babel}
-\usepackage[T1]{fontenc}
 \usepackage[margin=2cm]{geometry}
 \usepackage{graphicx}
 \usepackage{amsmath}
@@ -13,7 +13,8 @@
 \usepackage{eurosym}
 \usepackage{csvsimple}
 \usepackage{biblatex}
-\usepackage{hyperref}
+\usepackage[bookmarks=true,unicode,pdfpagelabels]{hyperref}
+\usepackage{bookmark}
 
 \author{Carlos Pinto Machado
 	<\href{mailto:2200909@estudante.uab.pt}{2200909@estudante.uab.pt}>}
@@ -21,7 +22,7 @@
 \title{Exercícios Resolvidos da AULA AbERTA: Introdução à Estatística}
 
 \addbibresource{bibliografia.bib}
-\makeindex
+
 \lstset{
 	language=R,
 	basicstyle=\footnotesize,
@@ -61,15 +62,11 @@
 		{º}{\textdegree}1
 }
 
-\renewcommand*{\listlistingname}{Lista de Listagens}
-
 \begin{document}
 \maketitle
 \tableofcontents
 
-\clearpage
-
-\chapter*{Introdução}\addcontentsline{toc}{chapter}{Introdução}
+\chapter{Introdução}
 
 \paragraph{} No decorrer da AULA AbERTA - "Introdução à Estatística:
 Estatística Descritiva com R"\cite{AulaAbertaIntroducaoEstatistica2017}, o
@@ -79,7 +76,7 @@ exercícios propostos. O presente documento pretende documentar soluções para 
 mesmo com recurso à Bibliografia recomendada do mesmo
 documento\cite{OliveiraEstatisticaDescritiva2011}.
 
-\section*{Notas de Implementação}\addcontentsline{toc}{section}{Notas de Implementação}
+\section{Notas de Implementação}
 
 \paragraph{} Com recurso ao manual do R\cite{RManual}, existe uma tendência
 aparente, que é a manipulação de data frames. Parece ser o nexo, sob qual o
@@ -91,7 +88,7 @@ ficheiros csv. Esta abordagem parece ser mais razoável, dado que
 podemos ter ficheiros com milhares de amostras.
 
 
-\section*{Recursos associados}\addcontentsline{toc}{section}{Recursos associados}
+\section{Recursos associados}
 
 \paragraph{} Na página do repositório\cite{a2edRRepo}
 estão os recursos, código e datasets, em zip:
@@ -177,18 +174,18 @@ ajustes, sendo o intervalo dado por:
 \section*{Exercícios Propostos}
 
 \begin{enumerate}[label=\arabic{chapter}.\arabic*]
-	\item \addcontentsline{toc}{section}{4.1}\hfill \\
+	\item\addcontentsline{toc}{section}{4.1}\hfill
 		\lstinputlisting[caption={ex4\_1.R}]{codigo/ieedr/ex4_1.R}
 		\begin{enumerate}[label=\alph*)]
-		\item $\overline{x} = 19.41667$\hfill
-		\item $s = 1.378954$\hfill
+		\item$\overline{x} = 19.41667$\hfill
+		\item$s = 1.378954$\hfill
 		\end{enumerate}
 	\clearpage
-	\item \addcontentsline{toc}{section}{4.2}\hfill\\
+	\item\addcontentsline{toc}{section}{4.2}\hfill
 		\lstinputlisting[caption={ex4\_2.R}]{codigo/ieedr/ex4_2.R}
 		\begin{enumerate}[label=\alph*)]
-		\item $N = 60$
-		\item \hfill\\
+		\item$N = 60$
+		\item\hfill
 			\begin{table}[h!]
 				\centering
 				\csvreader[
@@ -202,13 +199,13 @@ ajustes, sendo o intervalo dado por:
 				}
 				\caption{Tabela de frequências da distribuição de salários}
 			\end{table}
-		\item \hfill \\
+		\item\hfill
 			\begin{align*}
 				\overline{x} &= 1260 \\
 				s &= 54.5552122756449
 			\end{align*}
 	\clearpage
-		\item \hfill \\
+		\item\hfill
 			\begin{figure}[h!]
 				\centering
 				\includegraphics[width=0.6\textwidth]{imagem/ieedr/ex4_2d.png}
@@ -216,38 +213,78 @@ ajustes, sendo o intervalo dado por:
 			\end{figure}
 		\end{enumerate}
 	\clearpage
-	\item \addcontentsline{toc}{section}{4.3}\hfill \\
+	\item\addcontentsline{toc}{section}{4.3}\hfill
 		\lstinputlisting[caption={ex4\_3.R}]{codigo/ieedr/ex4_3.R}
 		\begin{enumerate}[label=\alph*)]
-		\item $\overline{x} = 64.26667$
-		\item $s = 9.676678$
+		\item$\overline{x} = 64.26667$
+		\item$s = 9.676678$
 		\end{enumerate}
 	\clearpage
-	\item \addcontentsline{toc}{section}{4.4}\hfill\\
+	\item\addcontentsline{toc}{section}{4.4}\hfill
 		\lstinputlisting[caption={ex4\_4.R}]{codigo/ieedr/ex4_4.R}
 		\begin{enumerate}[label=\alph*)]
-		\item \hfill
+		\item\hfill
 			\begin{figure}[h!]
 				\centering
 				\includegraphics[width=0.5\textwidth]{imagem/ieedr/ex4_4a.png}
 				\caption{Taxa de Inflação por país}
 			\end{figure}
 	\clearpage
-		\item \hfill
+		\item\hfill
 			\begin{figure}[h!]
 				\centering
 				\includegraphics[width=0.5\textwidth]{imagem/ieedr/ex4_4b.png}
 				\caption{Taxa de inflação por país(Gráfico
 				circular)}
 			\end{figure}
-		\item $\overline{x} = 1.533333$
+		\item$\overline{x} = 1.533333$
 		\end{enumerate}
 \end{enumerate}
 
-\clearpage
+\part{Elementos de Estatística Descritiva}
+
+\setcounter{chapter}{5}
+\chapter{Exercícios Propostos}
+
+\begin{enumerate}
+	\item\addcontentsline{toc}{section}{Exercício 1}\hfill
+		\begin{enumerate}[label=\alph*)]
+			\item
+			\item
+		\end{enumerate}
+	\item\addcontentsline{toc}{section}{Exercício 2}\hfill
+		\begin{enumerate}[label=\alph*)]
+			\item
+			\item
+		\end{enumerate}
+	\item\addcontentsline{toc}{section}{Exercício 3}
+	\item\addcontentsline{toc}{section}{Exercício 4}
+	\item\addcontentsline{toc}{section}{Exercício 5}\hfill
+		\begin{enumerate}[label=\alph*)]
+			\item
+			\item
+			\item
+		\end{enumerate}
+	\item\addcontentsline{toc}{section}{Exercício 6}
+	\item\addcontentsline{toc}{section}{Exercício 7}\hfill
+		\begin{enumerate}[label=\alph*)]
+			\item
+			\item
+			\item
+		\end{enumerate}
+	\item\addcontentsline{toc}{section}{Exercício 8}\hfill
+		\begin{enumerate}[label=\alph*)]
+			\item
+			\item
+			\item
+		\end{enumerate}
+\end{enumerate}
+
+\bookmarksetup{startatroot}
+
+\printbibliography[heading=bibintoc,title={Bibliografia}]
 \begingroup
 \let\clearpage\relax
-\printbibliography[heading=bibintoc,title={Bibliografia}]
 \listoftables\addcontentsline{toc}{chapter}{Lista de Tabelas}
 \listoffigures\addcontentsline{toc}{chapter}{Lista de Figuras}
 \endgroup
