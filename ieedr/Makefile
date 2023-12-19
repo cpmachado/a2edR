@@ -2,23 +2,23 @@ VERSION = $(shell cat VERSION)
 MAIN = ieedr.tex
 RES = $(wildcard recursos/**/*)
 RSCRIPTS = \
-	codigo/ieedr/ex3_1.R\
-	codigo/ieedr/ex3_2.R\
-	codigo/ieedr/ex3_3.R\
-	codigo/ieedr/ex4_1.R\
-	codigo/ieedr/ex4_2.R\
-	codigo/ieedr/ex4_3.R\
-	codigo/ieedr/ex4_4.R
+	codigo/ex3_1.R\
+	codigo/ex3_2.R\
+	codigo/ex3_3.R\
+	codigo/ex4_1.R\
+	codigo/ex4_2.R\
+	codigo/ex4_3.R\
+	codigo/ex4_4.R
 DATASETs = $(wildcard dataset/**/*)
 TABLES = \
-	tabela/ieedr/ex3_1.csv\
-	tabela/ieedr/ex4_2b.csv
+	tabela/ex3_1.csv\
+	tabela/ex4_2b.csv
 IMAGES = \
-	imagem/ieedr/ex3_2.png\
-	imagem/ieedr/ex3_3.png\
-	imagem/ieedr/ex4_2d.png\
-	imagem/ieedr/ex4_4a.png\
-	imagem/ieedr/ex4_4b.png
+	imagem/ex3_2.png\
+	imagem/ex3_3.png\
+	imagem/ex4_2d.png\
+	imagem/ex4_4a.png\
+	imagem/ex4_4b.png
 OUT=${MAIN:.tex=.pdf}
 PKG = \
 	CHANGELOG.md\
@@ -48,8 +48,7 @@ dist: clean
 	rm -rf ieedr-${VERSION}
 
 clean:
-	@latexmk -C -bibtex
-	@rm -f *.atfi *.zip *.bbl *.run.xml *.synctex.gz *.lol
+	@rm -rf aux *.pdf
 
 lint:
 	Rscript -e 'library(lintr);lint_dir(".")'
@@ -57,15 +56,15 @@ lint:
 style:
 	Rscript -e 'library(styler);style_dir(".")'
 
-tabela/ieedr/ex3_1.csv: codigo/ieedr/ex3_1.R dataset/ieedr/irmaos.csv
+tabela/ex3_1.csv: codigo/ex3_1.R dataset/irmaos.csv
 	Rscript $<
-imagem/ieedr/ex3_2.png: codigo/ieedr/ex3_2.R dataset/ieedr/idas.csv
+imagem/ex3_2.png: codigo/ex3_2.R dataset/idas.csv
 	Rscript $<
-imagem/ieedr/ex3_3.png: codigo/ieedr/ex3_3.R dataset/ieedr/irmaos.csv
+imagem/ex3_3.png: codigo/ex3_3.R dataset/irmaos.csv
 	Rscript $<
-tabela/ieedr/ex4_2b.csv imagem/ieedr/ex4_2d.png: codigo/ieedr/ex4_2.R dataset/ieedr/4_2.csv
+tabela/ex4_2b.csv imagem/ex4_2d.png: codigo/ex4_2.R dataset/4_2.csv
 	Rscript $<
-imagem/ieedr/ex4_4a.png imagem/ieedr/ex4_4b.png: codigo/ieedr/ex4_4.R dataset/ieedr/4_4.csv
+imagem/ex4_4a.png imagem/ex4_4b.png: codigo/ex4_4.R dataset/4_4.csv
 	Rscript $<
 
 .PHONY: clean dist lint r-scripts style watch 
