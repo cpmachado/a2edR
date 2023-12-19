@@ -10,20 +10,12 @@ por Teresa A. Oliveira, Amílcar Oliveira, e Nuno Sousa.
 	e Amílcar Oliveira:
 		* <http://hdl.handle.net/10400.2/1986>
 
-## Nomenclatura:
-
-Nos datasets e codigo, existem pastas para cada recurso:
+## Estrutura
 
 - "Introdução à Estatística: Estatística Descritiva em R":
-	+ [codigo/ieedr](codigo/ieedr)
-	+ [dataset/ieedr](dataset/ieedr)
-	+ [imagem/ieedr](imagem/ieedr)
-	+ [tabela/ieedr](tabela/ieedr)
+	+ [ieedr](ieedr)
 - "Elementos de Estatística Descritiva":
-	+ [codigo/eed](codigo/eed)
-	+ [dataset/eed](dataset/eed)
-	+ [dataset/eed](dataset/eed)
-	+ [tabela/eed](tabela/eed)
+	+ [eed](eed)
 
 ## LICENSE
 
