@@ -1,5 +1,5 @@
 VERSION = $(shell cat VERSION)
-MAIN = a2edR.tex
+MAIN = ieedr.tex
 RES = $(wildcard recursos/**/*)
 RSCRIPTS = \
 	codigo/ieedr/ex3_1.R\
@@ -26,8 +26,8 @@ PKG = \
 	Makefile\
 	README.md\
 	VERSION\
-	a2edR.pdf\
-	a2edR.tex\
+	ieedr.pdf\
+	ieedr.tex\
 	bibliografia.bib\
 	codigo\
 	dataset\
@@ -35,17 +35,17 @@ PKG = \
 	tabela
 
 ${OUT}: ${MAIN} ${RSCRIPTS} ${DATASETS} ${TABLES} ${IMAGES}
-	latexmk -quiet $(PREVIEW_CONTINUOUSLY) -use-make -pdf a2edR.tex
+	latexmk -auxdir=aux -quiet $(PREVIEW_CONTINUOUSLY) -use-make -pdf ieedr.tex
 
 watch: PREVIEW_CONTINUOUSLY=-pvc
 watch: ${OUT}
 
 dist: clean
 	make ${OUT}
-	mkdir a2edR-${VERSION}
-	cp -rv ${PKG} a2edR-${VERSION}
-	zip -rv a2edR-${VERSION}.zip a2edR-${VERSION}
-	rm -rf a2edR-${VERSION}
+	mkdir ieedr-${VERSION}
+	cp -rv ${PKG} ieedr-${VERSION}
+	zip -rv ieedr-${VERSION}.zip ieedr-${VERSION}
+	rm -rf ieedr-${VERSION}
 
 clean:
 	@latexmk -C -bibtex
