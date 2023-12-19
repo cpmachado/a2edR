@@ -1,5 +1,6 @@
 *.atfi
 *.zip
+*.pdf
 
 # Created by https://www.toptal.com/developers/gitignore/api/R,latex
 # Edit at https://www.toptal.com/developers/gitignore?templates=R,latex
