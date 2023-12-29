@@ -1,7 +1,7 @@
-df <- read.csv(file.path("dataset", "ieedr", "4_4.csv"))
+df <- read.csv(file.path("dataset", "4_4.csv"))
 
 # Exercício 4.4 a
-png(file.path("imagem", "ieedr", "ex4_4a.png"))
+png(file.path("imagem", "ex4_4a.png"))
 barplot(
   df$taxa,
   names.arg = df$pais,
@@ -15,7 +15,7 @@ barplot(
 )
 
 # Exercício 4.4 b
-png(file.path("imagem", "ieedr", "ex4_4b.png"))
+png(file.path("imagem", "ex4_4b.png"))
 pie(
   df$taxa,
   labels = df$pais,

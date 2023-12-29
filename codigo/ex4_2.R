@@ -1,4 +1,4 @@
-df <- read.csv(file.path("dataset", "ieedr", "4_2.csv"), head = TRUE)
+df <- read.csv(file.path("dataset", "4_2.csv"), head = TRUE)
 df <- transform(df, xi = as.numeric(xi))
 
 # Exercício 4.2 a
@@ -10,7 +10,7 @@ df <- transform(df, Ni = cumsum(ni), fi = round(prop.table(ni), 3))
 df <- transform(df, Fi = cumsum(fi))
 write.csv(
   df,
-  file.path("tabela", "ieedr", "ex4_2b.csv"),
+  file.path("tabela", "ex4_2b.csv"),
   quote = FALSE
 )
 
@@ -21,7 +21,7 @@ print(paste0("média: ", media))
 print(paste0("desvio padrão: ", dp))
 
 # Exercício 4.2 d
-png(file.path("imagem", "ieedr", "ex4_2d.png"))
+png(file.path("imagem", "ex4_2d.png"))
 barplot(
   df$ni,
   names.arg = as.character(df$xi),
