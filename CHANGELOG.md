@@ -7,12 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-### Added
-- Extensão de âmbito para incluir Elementos de Estatística Descritiva
-
-### Fixed
-- Correcção do index
-- Segregar domínios
+### Changed
+- Minor changes
 
 ## [1.2.0]
 
