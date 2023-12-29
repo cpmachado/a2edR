@@ -1,4 +1,4 @@
-xi <- read.csv(file.path("dataset", "ieedr", "irmaos.csv"))$x
+xi <- read.csv(file.path("dataset", "irmaos.csv"))$x
 df <- data.frame(media = mean(xi), desvio = sd(xi))
 df <- transform(
   df,
@@ -7,7 +7,7 @@ df <- transform(
 )
 print(df)
 
-png(file.path("imagem", "ieedr", "ex3_3.png"))
+png(file.path("imagem", "ex3_3.png"))
 barplot(
   table(xi),
   xlab = "Nº de irmãos",
